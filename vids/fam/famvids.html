@@ -38,9 +38,11 @@
     .form-container input, .form-container textarea { 
         width: 100%; padding: 10px; margin: 10px 0; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; box-sizing: border-box;
     }
+    .char-counter { text-align: right; font-size: 0.75rem; color: #9ca3af; margin-top: -8px; margin-bottom: 10px; }
     .form-btns { display: flex; gap: 10px; margin-top: 10px; }
     .btn { flex: 1; padding: 10px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
     .btn-submit { background: var(--primary); color: white; }
+    .btn-submit:disabled { background: #94a3b8; cursor: not-allowed; }
     .btn-cancel { background: #e5e7eb; color: #374151; }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,7 +66,8 @@
     <div class="form-container">
         <h3 id="suggestTitle">Suggest Info</h3>
         <input type="text" id="userName" placeholder="Your Name">
-        <textarea id="userSuggestion" rows="4" placeholder="Your suggestion or description..."></textarea>
+        <textarea id="userSuggestion" rows="4" maxlength="500" placeholder="Your suggestion or description..." oninput="updateCounter()"></textarea>
+        <div class="char-counter" id="charCount">0 / 500</div>
         <div class="form-btns">
             <button class="btn btn-submit" id="submitBtn" onclick="submitSuggestion()">Submit</button>
             <button class="btn btn-cancel" onclick="closeSuggest()">Cancel</button>
@@ -74,6 +77,11 @@
 
 <script>
     let currentItem = {};
+
+    function updateCounter() {
+        const text = document.getElementById('userSuggestion').value;
+        document.getElementById('charCount').innerText = text.length + " / 500";
+    }
 
     function playVideo(url) {
         let videoId = '';
@@ -131,14 +139,15 @@
                 body: JSON.stringify(payload)
             });
             
-            // Silent Success: Brief UI change then close
             btn.innerText = "Sent!";
             setTimeout(() => {
                 document.getElementById('userSuggestion').value = '';
+                document.getElementById('userName').value = '';
+                updateCounter();
                 closeSuggest();
                 btn.disabled = false;
                 btn.innerText = "Submit";
-            }, 800);
+            }, 1000);
             
         } catch (e) {
             btn.innerText = "Error";
