@@ -12,34 +12,38 @@
     h1 { font-size: 2rem; color: #111827; margin: 0; }
     .card-grid { display: grid; gap: 1rem; }
     .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-            padding: 20px; transition: transform 0.1s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+            padding: 20px; transition: transform 0.1s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
+            position: relative; }
     .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                 display: block; margin-bottom: 4px; cursor: pointer; }
-    .desc { color: #6b7280; font-size: 0.95rem; }
+                 display: block; margin-bottom: 4px; cursor: pointer; padding-right: 30px; }
+    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 30px; }
 
-    /* Modal Styles */
-    #videoModal { 
-        display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; 
-        background-color: rgba(0,0,0,0.95); align-items: center; justify-content: center; 
-    }
-    .modal-content { 
-        position: relative; width: 95vw; max-width: 1100px; aspect-ratio: 16/9; 
-        box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    }
-    .modal-content iframe { width: 100%; height: 100%; border-radius: 4px; border: none; }
-    
-    /* Close Button - Optimized for Mobile Tapping */
-    .close-btn { 
-        position: absolute; top: -50px; right: 0; color: white; font-size: 40px; 
-        cursor: pointer; font-weight: bold; padding: 10px; line-height: 1;
-    }
+    /* Video Modal Styles */
+    #videoModal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; 
+                  background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+    .modal-content { position: relative; width: 90%; max-width: 1000px; aspect-ratio: 16/9; }
+    .modal-content iframe { width: 100%; height: 100%; border-radius: 8px; }
+    .close-btn { position: absolute; top: -40px; right: 0; color: white; font-size: 30px; 
+                  cursor: pointer; font-weight: bold; }
 
-    /* Mobile-Specific Adjustments */
-    @media (max-width: 600px) {
-        body { padding: 10px; }
-        .modal-content { width: 100vw; }
-        .close-btn { top: -60px; right: 10px; font-size: 50px; }
+    /* Suggestion Logic Styles */
+    .suggest-icon { 
+        position: absolute; bottom: 15px; right: 15px; cursor: pointer; 
+        font-size: 1.2rem; color: #9ca3af; transition: color 0.2s; 
     }
+    .suggest-icon:hover { color: var(--primary); }
+
+    #suggestModal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; 
+                    background: rgba(0,0,0,0.7); align-items: center; justify-content: center; padding: 20px; }
+    .form-container { background: white; padding: 24px; border-radius: 12px; width: 100%; max-width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+    .form-container h3 { margin-top: 0; color: #111827; }
+    .form-container input, .form-container textarea { 
+        width: 100%; padding: 10px; margin: 10px 0; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; box-sizing: border-box;
+    }
+    .form-btns { display: flex; gap: 10px; margin-top: 10px; }
+    .btn { flex: 1; padding: 10px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    .btn-submit { background: var(--primary); color: white; }
+    .btn-cancel { background: #e5e7eb; color: #374151; }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Family Videos Master Index</title></head><body>
@@ -47,6 +51,7 @@
 <div class='card'>
 <a class='link-text' href='1997-1998/index.html'>1997-1998</a>
 <div class='desc'>Explore 1997-1998</div>
+<span class='suggest-icon' title='Suggest description' onclick="event.stopPropagation(); openSuggest('1997-1998', '1997-1998/index.html')">✎</span>
 </div>
 </div></div>
 
@@ -56,17 +61,32 @@
         <iframe id="videoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 </div>
+
+<div id="suggestModal">
+    <div class="form-container">
+        <h3 id="suggestTitle">Suggest Info</h3>
+        <input type="text" id="userName" placeholder="Your Name">
+        <textarea id="userSuggestion" rows="4" placeholder="Your suggestion or description..."></textarea>
+        <div class="form-btns">
+            <button class="btn btn-submit" onclick="submitSuggestion()">Submit</button>
+            <button class="btn btn-cancel" onclick="closeSuggest()">Cancel</button>
+        </div>
+    </div>
+</div>
+
 <script>
+    let currentItem = {};
+
+    // --- Video Logic ---
     function playVideo(url) {
         let videoId = '';
         if (url.includes('v=')) { videoId = url.split('v=')[1].split('&')[0]; }
         else if (url.includes('youtu.be/')) { videoId = url.split('youtu.be/')[1].split('?')[0]; }
         
         if (videoId) {
-            // playsinline=1 helps prevent iOS from hijacking the video into its own full-screen player
-            document.getElementById('videoPlayer').src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0&playsinline=1";
+            document.getElementById('videoPlayer').src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
             document.getElementById('videoModal').style.display = "flex";
-            document.body.style.overflow = 'hidden'; 
+            document.body.style.overflow = 'hidden';
         } else {
             window.location.href = url;
         }
@@ -74,16 +94,48 @@
     function closeVideo() {
         document.getElementById('videoModal').style.display = "none";
         document.getElementById('videoPlayer').src = "";
-        document.body.style.overflow = 'auto'; 
+        document.body.style.overflow = 'auto';
     }
-    // Close on background click
+
+    // --- Suggestion Logic ---
+    function openSuggest(title, url) {
+        currentItem = { title, url };
+        document.getElementById('suggestTitle').innerText = "Edit Info: " + title;
+        document.getElementById('suggestModal').style.display = "flex";
+    }
+    function closeSuggest() {
+        document.getElementById('suggestModal').style.display = "none";
+    }
+    async function submitSuggestion() {
+        const name = document.getElementById('userName').value;
+        const suggestion = document.getElementById('userSuggestion').value;
+        if(!name || !suggestion) { alert("Please fill both fields"); return; }
+
+        const payload = {
+            title: currentItem.title,
+            url: currentItem.url,
+            name: name,
+            suggestion: suggestion
+        };
+
+        try {
+            await fetch("https://script.google.com/macros/s/AKfycbwNU9Is5GsIwg1egQr1-EEQSH_-rOxJDPMrJhdEwn6kUxW4iTEz46pt0n2kuLCxe9L8vw/exec", {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(payload)
+            });
+            alert("Success! Your suggestion for '" + currentItem.title + "' has been logged.");
+            document.getElementById('userSuggestion').value = '';
+            closeSuggest();
+        } catch (e) {
+            alert("Error submitting. Please try again later.");
+        }
+    }
+
     window.onclick = function(event) {
-        if (event.target == document.getElementById('videoModal')) { closeVideo(); }
+        if (event.target == document.getElementById('videoModal')) closeVideo();
+        if (event.target == document.getElementById('suggestModal')) closeSuggest();
     }
-    // Close on Escape key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === "Escape") { closeVideo(); }
-    });
 </script>
 
 </body></html>
