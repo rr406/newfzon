@@ -18,7 +18,6 @@
                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 30px; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 30px; }
 
-    /* Video Modal Styles */
     #videoModal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; 
                   background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
     .modal-content { position: relative; width: 90%; max-width: 1000px; aspect-ratio: 16/9; }
@@ -26,7 +25,6 @@
     .close-btn { position: absolute; top: -40px; right: 0; color: white; font-size: 30px; 
                   cursor: pointer; font-weight: bold; }
 
-    /* Suggestion Logic Styles */
     .suggest-icon { 
         position: absolute; bottom: 15px; right: 15px; cursor: pointer; 
         font-size: 1.2rem; color: #9ca3af; transition: color 0.2s; 
@@ -51,7 +49,7 @@
 <div class='card'>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=LD9SHkkeegc')">Devotional Prayer</a>
 <div class='desc'>Naayana Yekshikyane...Fowers Thattidum</div>
-<span class='suggest-icon' title='Suggest description' onclick="event.stopPropagation(); openSuggest('Devotional Prayer', 'https://www.youtube.com/watch?v=LD9SHkkeegc')">✎</span>
+<span class='suggest-icon' title='Suggest description' onclick="event.stopPropagation(); openSuggest('Devotional Prayer', 'https://www.youtube.com/watch?v=LD9SHkkeegc', '1997-1998')">✎</span>
 </div>
 </div></div>
 
@@ -97,8 +95,8 @@
         document.body.style.overflow = 'auto';
     }
 
-    function openSuggest(title, url) {
-        currentItem = { title, url };
+    function openSuggest(title, url, folder) {
+        currentItem = { title, url, folder };
         document.getElementById('suggestTitle').innerText = "Edit Info: " + title;
         document.getElementById('suggestModal').style.display = "flex";
     }
@@ -112,7 +110,7 @@
         const suggestion = document.getElementById('userSuggestion').value;
         const btn = document.getElementById('submitBtn');
 
-        if(!name || !suggestion) { alert("Please fill both fields"); return; }
+        if(!name || !suggestion) { return; }
 
         btn.disabled = true;
         btn.innerText = "Sending...";
@@ -120,28 +118,31 @@
         const payload = {
             title: currentItem.title,
             url: currentItem.url,
+            folder: currentItem.folder,
             name: name,
             suggestion: suggestion
         };
 
         try {
-            // CORS FIX: Using text/plain and no-cors to bypass preflight checks
-            await fetch("https://script.google.com/macros/s/AKfycbynHkuZMqHJd7PIsMmRms1XMT7Is-noD0U6BQh94sO0qlUM8dAOkYRNu8UOoL_sGkR8xA/exec", {
+            await fetch("https://script.google.com/macros/s/AKfycbwNU9Is5GsIwg1egQr1-EEQSH_-rOxJDPMrJhdEwn6kUxW4iTEz46pt0n2kuLCxe9L8vw/exec", {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(payload)
             });
             
-            alert("Suggestion sent! It will appear in the sheet shortly.");
-            document.getElementById('userSuggestion').value = '';
-            closeSuggest();
+            // Silent Success: Brief UI change then close
+            btn.innerText = "Sent!";
+            setTimeout(() => {
+                document.getElementById('userSuggestion').value = '';
+                closeSuggest();
+                btn.disabled = false;
+                btn.innerText = "Submit";
+            }, 800);
+            
         } catch (e) {
-            console.error(e);
-            alert("Error sending suggestion. Check your internet connection.");
-        } finally {
-            btn.disabled = false;
-            btn.innerText = "Submit";
+            btn.innerText = "Error";
+            setTimeout(() => { btn.disabled = false; btn.innerText = "Submit"; }, 2000);
         }
     }
 
