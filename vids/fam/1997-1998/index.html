@@ -14,86 +14,55 @@
     .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
             padding: 20px; transition: transform 0.1s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
     .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                 display: block; margin-bottom: 4px; }
+                 display: block; margin-bottom: 4px; cursor: pointer; }
     .desc { color: #6b7280; font-size: 0.95rem; }
+
+    /* Modal Styles */
+    #videoModal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; 
+                  background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+    .modal-content { position: relative; width: 90%; max-width: 1000px; aspect-ratio: 16/9; }
+    .modal-content iframe { width: 100%; height: 100%; border-radius: 8px; }
+    .close-btn { position: absolute; top: -40px; right: 0; color: white; font-size: 30px; 
+                 cursor: pointer; font-weight: bold; }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>1997-1998</title></head><body>
 <div class='container'><header><h1>1997-1998</h1></header><div class='card-grid'>
 <div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=LD9SHkkeegc'>Devotional Prayer</a>
+<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=LD9SHkkeegc')">Devotional Prayer</a>
 <div class='desc'>Naayana Yekshikyane...Fowers Thattidum</div>
 </div>
-<div class='card'>
-<a class='link-text' href='tabletop.html'>Tabletop Storyteller</a>
-<div class='desc'>Epic stories from the master storyteller</div>
+</div></div>
+
+<div id="videoModal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeVideo()">&times;</span>
+        <iframe id="videoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
 </div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=IkUn_oAtrDk'>Bother Mom</a>
-<div class='desc'>No rest for Mom</div>
-</div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=jQWZauTadCM'>Sami & Matchbox</a>
-<div class='desc'>Praying to Sami; Gimme Matchbox</div>
-</div>
-<div class='card'>
-<a class='link-text' href='milk.html'>Milk Episode</a>
-<div class='desc'>TST Adventures of milkman</div>
-</div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=UegeAvaJmo4'>Playtime with Mom - Part 1</a>
-<div class='desc'>Play with Mum</div>
-</div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=v5hh7cLiKpU'>Playtime with Mom - Part 2</a>
-<div class='desc'>Play with Mum</div>
-</div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=9cjgxlriGA4'>Lego Tower</a>
-<div class='desc'>Don't birake - veenatte birake aavum</div>
-</div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=tXu1Juzp6NI'>Buy medicine - Part 1</a>
-<div class='desc'>TST Drive to Medicine Shop - Boo alla, Geen alla, Red Red</div>
-</div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=RTNWIKAg-tk'>Buy medicine - Part 2</a>
-<div class='desc'>Naan shoppakarinde aduthe pote medicine medikyam; Ammakye Help Cheyannam</div>
-</div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=WdONXseIUwU'>Paccha Chor Eating</a>
-<div class='desc'>Chomping away on Paccha Chor</div>
-</div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=ZfuVGgsbEHw'>Burgerandfriesand .... Panther scare</a>
-<div class='desc'>Order Burger and Fries and.... Panther pons, eat, I'm very sad</div>
-</div>
-<div class='card'>
-<a class='link-text' href='rccfirst.html'>First School, First Day</a>
-<div class='desc'>Getting ready to go first day to Reston Childrens Cente</div>
-</div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=gCZJ1tE9n1E'>Yay it's Onam Pookalam</a>
-<div class='desc'>First Onam in USA</div>
-</div>
-<div class='card'>
-<a class='link-text' href='3rdbday.html'>Third Birthday</a>
-<div class='desc'>Third Birthday Celebrations</div>
-</div>
-<div class='card'>
-<a class='link-text' href='rcchalloween.html'>Halloween at RCC</a>
-<div class='desc'>Halloween Program at Reston Childrens Center</div>
-</div>
-<div class='card'>
-<a class='link-text' href='ojtime.html'>OJ Time</a>
-<div class='desc'>Son and Dad OJ Time</div>
-</div>
-<div class='card'>
-<a class='link-text' href='https://www.youtube.com/watch?v=it01Bss-1PU'>Elmer</a>
-<div class='desc'>Reading Elmer Book (read the book yourself <a href="https://drive.google.com/file/d/1UHPrkB55foZHZLe2Go4zruX0yurkTMi3/view?usp=sharing">here</a>)</div>
-</div>
-<div class='card'>
-<a class='link-text' href='westcoast.html'>West Coast Trip</a>
-<div class='desc'>Visit Rekha & Santosh</div>
-</div>
-</div></div></body></html>
+<script>
+    function playVideo(url) {
+        let videoId = '';
+        if (url.includes('v=')) { videoId = url.split('v=')[1].split('&')[0]; }
+        else if (url.includes('youtu.be/')) { videoId = url.split('youtu.be/')[1].split('?')[0]; }
+        
+        if (videoId) {
+            document.getElementById('videoPlayer').src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+            document.getElementById('videoModal').style.display = "flex";
+            document.body.style.overflow = 'hidden'; // Stop scrolling
+        } else {
+            window.location.href = url; // Fallback for folder links
+        }
+    }
+    function closeVideo() {
+        document.getElementById('videoModal').style.display = "none";
+        document.getElementById('videoPlayer').src = "";
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+    // Close on background click
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('videoModal')) { closeVideo(); }
+    }
+</script>
+
+</body></html>
