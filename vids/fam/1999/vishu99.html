@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    :root { --primary: #2563eb; --text: #1f2937; --bg: #f3f4f6; --card: #ffffff; --border: #e5e7eb; }
+    body { font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+           line-height: 1.5; color: var(--text); background: var(--bg); margin: 0; padding: 20px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+    h1 { font-size: 2rem; color: #111827; margin: 0; }
+    .card-grid { display: grid; gap: 1rem; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
+            padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
+            display: flex; align-items: flex-start; gap: 15px; }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
+    .content-right { flex: 1; }
+    .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
+    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
+                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
+    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; }
+    .suggest-icon { position: absolute; bottom: 15px; right: 15px; cursor: pointer; font-size: 1.2rem; color: #9ca3af; transition: color 0.2s; }
+    .suggest-icon:hover { color: var(--primary); }
+    #videoModal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+    .modal-content { position: relative; width: 90%; max-width: 1000px; aspect-ratio: 16/9; }
+    .modal-content iframe { width: 100%; height: 100%; border-radius: 8px; }
+    .close-btn { position: absolute; top: -40px; right: 0; color: white; font-size: 30px; cursor: pointer; }
+    #suggestModal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); align-items: center; justify-content: center; padding: 20px; }
+    .form-container { background: white; padding: 24px; border-radius: 12px; width: 100%; max-width: 400px; }
+    .form-container input, .form-container textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; }
+    .form-btns { display: flex; gap: 10px; }
+    .btn { flex: 1; padding: 10px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    .btn-submit { background: var(--primary); color: white; }
+    .btn-cancel { background: #e5e7eb; color: #374151; }
+</style>
+<title>Aluva Vishu Trip</title></head><body>
+<div class='container'><header><h1>Aluva Vishu Trip</h1></header><div class='card-grid'>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Vishu Eve - 1</a>
+    <div class='desc'>Muthachan & Mum lighting sparklers & flowerpots....Bro screaming away wildly....Ammu carrying quiet Baby</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Vishu Eve - 2</a>
+    <div class='desc'>Jagdish & Muthachan lighting...Bro invited, chickens out....Baby staring long at sparkler</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Vishu Eve - 3</a>
+    <div class='desc'>More fireworks lighting.....Muthachan carrying Baby</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Vishu Eve - 4</a>
+    <div class='desc'>Dad carries Baby....Ammu hiding, Mum trying to force her to come...Ammu lights sparkler</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Vishu Eve - 5</a>
+    <div class='desc'>End of fireworks.....Bro antics....Mum yells at Bro</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Sadya - 1</a>
+    <div class='desc'>Balan walking by.... Pranav on divan....Baby lying on ground and munching toy....Vishu feast on dining table....Eliyakutty teacher, Jagdhish, Suja, Muthachan, Mum eating....Closeup of food on Elas.....Balan serving Bro, piles on the rice, Bro says that's enough!</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Sadya - 2</a>
+    <div class='desc'>More eating....Ammu playing with Baby....Muthachan smiling for camera</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Jagdish Leaving - 1</a>
+    <div class='desc'>Living Room....Baby in frilly dress...Bro crawling on floor.....Jagdish getting ready to leave....Muthashee peeks from behind curtain and quickly hides....Jagdish carries Baby who plays with his collar...</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Jagdish Leaving - 2</a>
+    <div class='desc'>Ammu carries Baby, jagdish trying to carry Bro....Muthashee comes out from behind curtain...Baby whimpering</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>On Ammu's Bed - 1</a>
+    <div class='desc'>Mum, Bro and Baby playing on Ammu's bed</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>On Ammu's Bed - 2</a>
+    <div class='desc'>Baby bouncing on tummy, trying to reach out to camera....goes too close to edge of bed....Mum swishes her back....Bro "black panther" sneaks up from behind and pounces on Mum</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>On Ammu's Bed - 3</a>
+    <div class='desc'>More bro antics....Baby looking on amused</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Dining Room</a>
+    <div class='desc'>Pan around dining room...Mum,Ammu, Bro in Ammu's room....Lot of sounds from room, Mum giving baby a bath</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Bro Muthachan chat</a>
+    <div class='desc'>Muthachan and Bro at dining table eating and chatting</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Baby whimpering</a>
+    <div class='desc'>More eating/chatting.....Baby bath done....Baby lying on mat, whimpering a bit</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Ammu cooking</a>
+    <div class='desc'>Ammu in kitchen...Baby bawling....Ammu putting Baby to sleep....Pan around kitchen</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Champakam</a>
+    <div class='desc'>Bro says Joy and "that muthachan" took him to the river....Not muthachan, he is told......Bro says he went to Champakam (actually Manjapra)</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Bro chatting</a>
+    <div class='desc'>Bro chatting to Muthachan and Dad  about trip to park and river</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Ammu sing to Baby</a>
+    <div class='desc'>Ammu singing Va Vo to Baby on lap....Baby wide awake....Pan arounf living room</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Washing car with Joy</a>
+    <div class='desc'>Joy getting hose to wash car...Bro goes to "help"....Ammu standing Baby up on wall in sitout area and baby watching outside scenery....camera closeup of outside surroundings</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Muthashee eating</a>
+    <div class='desc'>Muthashee eating at dining table, looks up, smiles and waves....Mum says don't take me....Joy & bro washing car</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Muthachan's office</a>
+    <div class='desc'>Going into Muthachan's office....Muthachan sitting at office table and reading.....back to Joy & Bro washing car</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Bro whining  - 1</a>
+    <div class='desc'>Bro hurt on leg and whimpering...Mum applying medicine...Baby in yellow bouncing on tummy...Ammu offers flute but Bro whines it doesnt work....Ammu rattles a toy and baby guffaws and flails excitedly.....Bro continues to whine and baby continues to flail away wildly</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Bro whining  - 2</a>
+    <div class='desc'>More wild flailing and squealing by Baby....Mum tells Bro it will heal by tomorrow but Bro disagrees and whines more...Ammu playing Oliche Kandu with Baby....Baby rolls over and gets hand stuck in dress</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Bro whining  - 3</a>
+    <div class='desc'>Bro whining even more when Baby pokes him....Baby stares at camera, grins and flails wildly....Bro wants Barbie bandaid....Baby gets stuck on pillow trying to roll over, starts bawling, Ammu to the rescue</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Bro whining  - 4</a>
+    <div class='desc'>Baby getting cranky, Ammu takes her away.....Mum warns Bro that bandage will hurt...Bro reluctantly agrees and whines on....Mum and Ammu talking about lunch...Bro leaves room whining....Mum heaves a sign of relief saying Oh Ente Mone....a few seconds of elevated room</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Elevated Room</a>
+    <div class='desc'>Mum in elevated room watching TV intently....Bro chatting with Ammu downstairs.....Bro lying on sofa in dining room spouting nonsense,,,,,Baby on mat on floor whimpering and making sad sounds</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Baby happy sounds</a>
+    <div class='desc'>Baby lying on mat spots camera above and gets excited....keeps staring, makes a variety of happy sounds and flails away...Bro in kitchen telling Ammu he loves the red curry....Bro walks by spouting nonsense and Baby not happy, starting to get cranky</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Muthachan ironing</a>
+    <div class='desc'>Panning around Muthachan's room...Mum walks by...Bro and baby dozing peacefully on bed.....Muthachan ironing clothes....Panning around Jagdish's room</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Truck, not Lorry</a>
+    <div class='desc'>More panning around Muthachan's room....closeup of Chitta's nook.....pan around house surroundings....Bro says a "a truck" amd Mum says "lorry"...Bro says that's what they call it in India but he will call it a truck...or a lorry</div>
+  </div>
+</div>
+<div class='card'>
+  <i class='material-icons icon-main'>folder_open</i>
+  <div class='content-right'>
+    <div class='date-stamp'>Apr-1999</div>
+    <a class='link-text' href='#'>Baby talks to Muthachan</a>
+    <div class='desc'>Panning around dining room....Muthachan eating at dining table...Dad walks by....Bro lazing on bed....Baby on mat flailing away wildly and making sounds...turns around to Muthachan and says Aaaaah, Muthachan replies...Mum calls out to Baby and baby flails away before lying still and staring.....Ammu cooking in kitchen....Muthachan washing hands in outside sink, says something to Bro...Bro ignores still sprawled on bed</div>
+  </div>
+</div>
+</div></div>
+<div id="videoModal"><div class="modal-content"><span class="close-btn" onclick="closeVideo()">&times;</span><iframe id="videoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div></div>
+<div id="suggestModal"><div class="form-container"><h3 id="suggestTitle">Edit Info</h3><input type="text" id="userName" placeholder="Your Name"><textarea id="userSuggestion" rows="4" placeholder="Your suggestion..."></textarea><div class="form-btns"><button class="btn btn-submit" id="submitBtn" onclick="submitSuggestion()">Submit</button><button class="btn btn-cancel" onclick="closeSuggest()">Cancel</button></div></div></div>
+<script>
+    let currentItem = {};
+    function playVideo(url) {
+        if (url === '#' || !url) return;
+        let videoId = '';
+        if (url.includes('v=')) { videoId = url.split('v=')[1].split('&')[0]; }
+        else if (url.includes('youtu.be/')) { videoId = url.split('youtu.be/')[1].split('?')[0]; }
+        if (videoId) {
+            document.getElementById('videoPlayer').src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+            document.getElementById('videoModal').style.display = "flex";
+            document.body.style.overflow = 'hidden';
+        } else { window.location.href = url; }
+    }
+    function closeVideo() {
+        document.getElementById('videoModal').style.display = "none";
+        document.getElementById('videoPlayer').src = "";
+        document.body.style.overflow = 'auto';
+    }
+    function openSuggest(title, url, folder) {
+        currentItem = { title, url, folder };
+        document.getElementById('suggestTitle').innerText = "Edit Info: " + title;
+        document.getElementById('suggestModal').style.display = "flex";
+    }
+    function closeSuggest() { document.getElementById('suggestModal').style.display = "none"; }
+    async function submitSuggestion() {
+        const name = document.getElementById('userName').value;
+        const suggestion = document.getElementById('userSuggestion').value;
+        const btn = document.getElementById('submitBtn');
+        if(!name || !suggestion) return;
+        btn.disabled = true; btn.innerText = "Sending...";
+        try {
+            await fetch("https://script.google.com/macros/s/AKfycbynHkuZMqHJd7PIsMmRms1XMT7Is-noD0U6BQh94sO0qlUM8dAOkYRNu8UOoL_sGkR8xA/exec", {
+                method: 'POST', mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({ ...currentItem, name, suggestion })
+            });
+            btn.innerText = "Sent!";
+            setTimeout(() => { closeSuggest(); btn.disabled = false; btn.innerText = "Submit"; }, 1000);
+        } catch (e) { btn.innerText = "Error"; btn.disabled = false; }
+    }
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('videoModal')) closeVideo();
+        if (event.target == document.getElementById('suggestModal')) closeSuggest();
+    }
+</script>
+</body></html>
