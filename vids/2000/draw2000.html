@@ -15,43 +15,67 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; }
+    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
                   display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
-    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; }
+    
+    /* Truncation Logic */
+    .desc-wrapper { position: relative; }
+    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    .desc.expanded { -webkit-line-clamp: unset; display: block; }
+    .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 4px; }
+    .desc:not(.expanded).is-truncated + .read-more { display: inline-block; }
 </style>
 <title>Artists at work</title></head><body>
 <div class='container'><header><h1>Artists at work</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=2k8Bu_JBl8k')">Glue</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu gets ready with glue bottle....Chettan helps her apply glue</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cMaOAru45CQ')">Drawing Tiger</a>
+<div class='desc-wrapper'>
 <div class='desc'>Chettan shows Anu how to draw a tiger and lion.....Anu says I'm daw lion...Chettan shoves hand away</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=fBKKAbIlD9g')">Need nuder paper</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu announces that Chettan make lion and tiger.....Chettan draws bear...Anu asks Dat lion?.....Anu whines Need Nuder paper...Need Nuder one....Mum says will give if Anu gives hug....Chettan draws stars</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=VsM4KHwHP9w')">Anu starts drawing</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu whines more for nuder paper....tells Mum gimme hud.....Mum says you give me hug.....Anu puts sketch pen in mouth....Mum says Enda Kanikkane...Chettan cackles loudly...Mum takes away pen and says write with that crayon...Anu whines and says dont vant dat vun....gets paper finally....complains Chettan daws on Anu's paper....says I do lion and tider</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=UoN_Oy7pCow')">Tar and  Onyx</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu draws Tar (star)....microwave beeps...Anu says that's Matotheesthees (Mac & cheese)...says I daw Pothemon....Chettan draws Onyx....Mum asks Mala Evide...Anu says Don</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=UpFayv9dh8Y')">Draw face</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mum asks Chettan to draw Butterfree.....Anu says Tattertale (?).....Mum tries to draw Pottu on Anu.....Mum draws Anukutty's face, nose etc and asks what else....Anu says Baivau.....microwave beeps and Chetan goes to get the Mac&Cheese out</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 </div></div>
 <div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center;">
@@ -77,5 +101,20 @@
         document.getElementById('videoPlayer').src = "";
         document.body.style.overflow = 'auto';
     }
+
+    function toggleDesc(el) {
+        const desc = el.previousElementSibling;
+        desc.classList.toggle('expanded');
+        el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
+    }
+
+    // Check if description is long enough to need "Read more"
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.desc').forEach(d => {
+            if (d.scrollHeight > d.clientHeight) {
+                d.classList.add('is-truncated');
+            }
+        });
+    });
 </script>
 </body></html>

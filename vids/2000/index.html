@@ -15,413 +15,659 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; }
+    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
                   display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
-    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; }
+    
+    /* Truncation Logic */
+    .desc-wrapper { position: relative; }
+    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    .desc.expanded { -webkit-line-clamp: unset; display: block; }
+    .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 4px; }
+    .desc:not(.expanded).is-truncated + .read-more { display: inline-block; }
 </style>
 <title>2000 - Explore 2000</title></head><body>
 <div class='container'><header><h1>2000 - Explore 2000</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=I12LoY9rhOY')">Play in snow - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Heavy snow outside Herndon house....Arvind playing outside....Anu standing and watching through front door.....Mum calls out to Anu and she totters by and says Thetta pointing outside....Anu joins Arvind in the snow outside...Arvind balls up some snow and throws it in Mum's direction....Anu plodding around in pink gloves and purple hooded jacket...Arvind throws snow at Anu, Mum says Ai but Anu makes excited babbling sounds</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=8u2X0ZNJg7U')">Play in snow - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu plodding around in the snow in front yard....and then on the backyard deck, all smiles and babbles....Arvind chuffed about being recorded....Anu says Eeeaa Emme Peppe (Translation: I want to get into toy car)....Mum asks Arvind to open it for Anu</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1qLgmiWp7zg')">Play in snow - 3</a>
+<div class='desc-wrapper'>
 <div class='desc'>Backyard deck...Arvind dumps some snow on the toy car seat....Mum says No, no, Kuuti Tanakkule but to no avail....Arvind opens the door and Anu says Aa Aa and geefully gets in.....Mum says Tattikalyu Mone but he dumps more snow on steering wheel and on top of car....Anu looks mighty pleased</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=hZIWzmAaSe4')">Play in snow - 4</a>
+<div class='desc-wrapper'>
 <div class='desc'>Arvind throws snowball at Mum....Anu sitting inside toy car loking amused, gets out and starts plodding around.....inside house, Anu rummaging in cupboard, approaches Dad, looks up at camera and says  mimim.aa.aa.aa... goes back tp cuboard makinf other sounds....comes back, grabs Dad's leg gleefully and says Eh..Taa..Eh...Dad replies and Anu stares silently....Dad asks where Chetan is and Anu replies</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=XdC7sj1ZcR8')">Crawling up steps</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu crawling up steps from basement chattering and whiniing away....reaches top finally and runs into kitchen, points to pickle bottle and says Bbbba..Mmma....Mum says that's hot and Anu shakes her hands and says hooo....Anu opens drawer .... Mum says Athinde Ullil Onnilla and Anu promptly throws out mats from drawer</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=RI6l7oIt6eA')">Highland Mews - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Microwave beeps and Anu says mamma....Mum asks Ende Mamma Vemde and Anu replies....Mum sets food on island, Anu says Tetta...Mum looking sternly at camera....Closeup of Arvind pic on fridge and his lunchbox.....Mum asks Anu if she wants banana and she nods head in negative....Anu walking around drinking from juice bottle.....Mum sits Anu in high chair and she starts whining</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AcATeH-anbs')">Highland Mews - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu in high chair whining away....opens baby pic book and starts reading very eloquently....pan to Mum doing work.....Anu asking Dad some questions....Dad asks where's the baby and Anu points to pic in book, then points again correctly and says Daaay when asked where the baby with the blocks are</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=LlRe212X59s')">Highland Mews - 3</a>
+<div class='desc-wrapper'>
 <div class='desc'>Dad asks where the other baby with blocks are and Anu keeps asking Eh Eh.....next where's the baby with the oranges and Anu points it out correctly....where's the other baby with the oranges is met with Eh Eh and pointing to a random pic in book.....Dad holding hands with kids and dancing to nursery song.....Anu is mighty excited</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=BrNH8cSnoLQ')">Highland Mews - 4</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu dancing solo to nursery song.....pulls paper roll out of cupboard and runs around kitchen island grinning.....Arvind says about a Pokemon character that "she is a bad guy" and Dad is confused.....Anu putzing around.....Arvind has more to say about Pokeman charcter he is coloring....Anu assembling kitchen equipment</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KPS0M2oTAWw')">Highland Mews - 5</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu grabs Dad's legs, pulls him by his finger and starts dancing to nursery song....grabs finger on other hand too and dances vigorously....song over, grabs Dad's legs looks up and Dad asks Edukkano and gets excited....Dad picks her up, she rests head on shoulder and listens to new song....Arvind continues to color</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=X4E7KLf1_oI')">Highland Mews - 6</a>
+<div class='desc-wrapper'>
 <div class='desc'>Arvind running around living room with vacuum cleaner part making vacuum cleaner sounds....Anu copying Arvind</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=VkPkyyur2II')">Say words - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu saying words - cat, dog, cow, this, boys, toys, baby, up, apple/orange juice, anu, chetan, achan, amma....replies to where is anu/ammumma? .... says other words - car, deck, moon.</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gFkZW4t93iA')">Say words - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mum asks Anu to show her eye.....Anu giving Kurumbi look...Mum asks her to say diaper....Achan asks Enginiya Chirikkya, engineya Karaya, enginaye scream cheyya, Chetan engineya karaya, scream cheya.......Anu, close your eyes (closes eyes and opens mouth)....showing how Achan yawns</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gcOcl9IuI8I')">Pic book - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu brings picture book from cupboard, sits on Dad's lap and Dad asks questions about the pics</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=uYV_QmfoOHw')">Pic book - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>More questions about pics....when all done, Dad says no more and Anu starts whining</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=W3rVGpnwVUs')">Backyard Deck - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu in toy car on deck in pink dress and hair pinned up...grinning widely and babbling away....asks Mum where Dad, Mum, Arvind and Anu are</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=XjQR9LZtzYw')">Backyard Deck - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu putzing around more on deck</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=rBIrw_7e0ks')">Frontyard - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu watering plants and playing in the front yard</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=T7eA5MVWCOs')">Frontyard - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>More watering in front yard...at the end Anu lying on sofa and dad reading paper</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>SPR-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zmtIeAQg5tE')">Cherry Blossoms - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Washington DC Trip</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>SPR-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zZBeHZ_LfnA')">Cherry Blossoms - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Washington DC Trip</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>SPR-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=MRq8A6xrOCc')">Questions</a>
+<div class='desc-wrapper'>
 <div class='desc'>Back form DC...Anu locked out, bawls.....replies to Dad's questions: "Amma is a?", "Achan is a?", "Chetan is a?".....crawls through Dad's legs, then whines and attacks him....gets hand stuck under sofa, whines more</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>SPR-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1TWYowx4PP8')">Maam Uppumav</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mum teaching Arvind to cut carrots.....Anu looking closely......Anu gets into high chair and says says Uppumac is "Maam"....Arvind says he is eating "Shuggurr"</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>SPR-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cUSYV4IXe_U')">Uppumave is Muthachan</a>
+<div class='desc-wrapper'>
 <div class='desc'>Now Anu finds it "Hotte".....Arvind reading book....Anu calls Uppumave Muthachan...asks Dad to server her.....says it's Hotte....Dad says blow on it...spit comes out instead</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>SPR-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=y-vhsHt7JKA')">Playing in yard</a>
+<div class='desc-wrapper'>
 <div class='desc'>Arvind and Anu playing in front</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gjQBUU36YbQ')">Rohan, Arvind & Anu  - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Playing in living room</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=V7lqcjAT8Tg')">Rohan, Arvind & Anu  - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Playing in living room</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=C8sgTOY76-s')">Big big water</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu & Arvind sing Big Big Water....Arvind showing dinosaur book.....Anu answers Mum's questions....says Anu is a man.....Arvind whines let me see</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=IBM_pfPbJ-U')">Mini tantrum</a>
+<div class='desc-wrapper'>
 <div class='desc'>Bro pesters Anu....Anu starts bawling and goes to dad to be picked up......Dad asks and Chetan says he did not do anything..Anu pleased now and crawls up over dad's shoulders</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=g0LXLzw4DgI')">Wake dad up</a>
+<div class='desc-wrapper'>
 <div class='desc'>Singing big big water again....Anu checking if Ammumma & Muthachan have come....Hiding behind curtain.....Anu wakes up dad</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=n7vpUmsAEHA')">Nursery Songs</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu in kitchen listening intently to nursery songs</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=a9z1ev64vdg')">Helper Arvind</a>
+<div class='desc-wrapper'>
 <div class='desc'>Arvind helping Anu on and off dining table, Anu happy.....Mum asks Anu what Chetan just did and she says AMMA BLAVVABAVAA....Chetan tells Mum that means he helped her.....Anu continues BATABABATABATA.....Mum rewards Arvind plus points but he wants 1000</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=nbiwA8Nj05A')">Muthachan feeds Anu</a>
+<div class='desc-wrapper'>
 <div class='desc'>Muthachan feedin Anu....Ammu watching.....Mum asks Anu who's feeding her and she replies...Arvind asking Anu to say some words.....Anu big grin....Arvind tells Mum an interesting fact about sloths....Mum's impressed, asks where he learnt about it</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zXuz67kn_ro')">Anu aces word test!</a>
+<div class='desc-wrapper'>
 <div class='desc'>Arvind asks Anu to say more words - flower, fire engine, racecar, hat, floor, pillow, cushion, Karthink, piano, jacket, house, trashcan, mirror etc etc....Mum asks to wake Achan up</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=TMatUsbqb-o')">Read Barney Book</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu trying to look at herself through camera.....Mum reads Barney book to Anu.....asks if she brushed her teeth, she says no, wants to read book first....gives Mum an umma</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=W_2IVRHvcWo')">N'n'Ms from Santa</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mum asks Anu where dad is taking her today....Anu says Santa is coming and  wants N'nMs and other gifts from him....says Chetan will get Pothamons and bananas from Santa....Anu reads Barney book</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=CbfL6AL74CU')">Sandwich</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu debating with Mum about how much of the peanut butter sandwich she ate......Are u gonna share odameel with me, dad?....tells Dad what to buy at Food Lion.....Dad asks Anu to tell a pink lion story</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=nE5ZXOYrS8U')">Pick up Chettan</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu wants to go with Dad to pick Chettan up from school.....Mum washing milk bottle....Anu tells Dad Niloy left his cup here....wants to help Mum fill milk bottle....runs away from Mum with cup....</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=G4kYw9eNOao')">Oatmeal</a>
+<div class='desc-wrapper'>
 <div class='desc'>Waiting for oatmeal to get ready.....Anu asks Dad to thayee her....wants to wake sleepyhead up....Mum spots dirt in Anu's ear....Mum writing stuff....Oatmeal is ready</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=EoZ_IP6DpVo')">President</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mum asks Anu to go with Dad to Prateek's party.....Anu says she dont vaaant oatameal......Mum says dont use that tone, copying Chetan......Mum suggests but Anu not interested in brushing teeth or taking bath......tells dad she wants a president from the toy store.....Chetan spotted lying on floor next to music player....Anu joins him</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=B9TysWRFlbM')">Christmas tree</a>
+<div class='desc-wrapper'>
 <div class='desc'>Chettan ghosti lipsyncs to song with Any lying down next to him.....Anu takes Dad to show him the Christmas tree......gives her thoughts on how many Christmas trees everyone should get.....tells Mum she wants one more spoon</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=SCA5DuRtuvM')">Planet Play</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu says she saw  the balls go yound and yound at Planet Play......explains what she did to make them go yound and yound.....hides face with hands to escape being fed by Mum</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gdxxmykfhAA')">Goshti Show</a>
+<div class='desc-wrapper'>
 <div class='desc'>Chetan making faces....Dad warns he is being recorded ....Goshti increases....Anu starts copying goshti....Mum says time for bath....Anu wants tub bath</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=vjpPgbI9vNE')">ACE Christmas Program - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Academy of Christian Academy school program</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=8aHnx_mgQnY')">ACE Christmas Program - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Academy of Christian Academy school program</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <a class='link-text' href='nanuvisit.html'>2000-2001 Nanu visit</a>
+<div class='desc-wrapper'>
 <div class='desc'>Nanu & family visiting DC for Christmas and New Year</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1CHjew1dH8M')">Thaayi me</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu whines Daddy Thaayi me....Chettan talks about reading lessons and the ACE program</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Pl09sdT2WGk')">Thum up</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu asks Muthachan to "Thum up".....All getting ready to go for ACE program</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>MID-2000</div>
 <a class='link-text' href='ace2000.html'>ACE Summer Program</a>
+<div class='desc-wrapper'>
 <div class='desc'>ACE (Summer?) Program</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Md89kDxijKQ')">Making chicken nuggets</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu wants Thitten Nuddet....wants to Thut it....Dad asks where knife is...gives nonsense reply.....microwave beeps, says Amma made that sound....corrects herself and says Matovay</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=suo0mo90LNY')">Eating nuggets</a>
+<div class='desc-wrapper'>
 <div class='desc'>Blowing to cool nuggets and start eating</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=LIfL3KuGhJw')">Recounting zoo trip</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu chomping on nuggets and recounting trip to zoo and animals seen</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=HyJJ3CQCqy8')">Tabletop chat</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu sitting on dining table and chatting with Dad</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1XJ2VQ3-wuk')">Dishwasher - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu opens dishwasher, climbs in and gets a bottle.....asks Dad to Thaayi me...Dad says no.....throws tantrum and says Mammy Tell....asks Dad for water</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zRWwcXX0QjA')">Dishwasher - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Dad tells Anu he will give her water if she prays</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=pcb2qLe_yAg')">No cashews</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mum making puris....Anu wants cashewnut laath time...Dad asks how many.....Only vammore, cho many......Mum says no cashews, eat puri</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=j9P2lxSCWa8')">Puri</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu saya Daaadi, Mummy....whines for Puyi....calls Dad Thundu....tells Mum to balow on veyi hot puyi....chats with Mum about maam/hot puyi...says Kai pollum....calls flower faleh</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=R3XuG-Jj1MQ')">Rachana Baby</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu asks for curry....changes mind after seeing it....talks about black spider on steps...complains about Rachana baby</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=uyij_XQr3_Q')">What they ate</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu sings Barney song and some nonsense.....tells what Mum, Dad, Chetan and she ate during the thunderstorm</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=vOA_Vi0Hiy8')">Hearty laugh</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mum bottle-feed Anu....Chettan whining....Any cyling legs, kicks Chettan....laughing heartily at Chetan's antics</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wd3azLdgN9c')">Scared</a>
+<div class='desc-wrapper'>
 <div class='desc'>Chettan goshti....Anu finds lion....Chettan spins top....scares Anu with spider....Anu runs to Dad and complains....shows how lions, tigers roar....Chettan needles Anu again</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_i8YcDga-40')">Dont do it</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu tells Chettan sternly Dont do it....laughs and puts spider in mouth...throwing toy at each other.....</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9dZN0VBGkTE')">Menon Baby</a>
+<div class='desc-wrapper'>
 <div class='desc'>Putting Menon Baby to sleep....Chetan playing with Etch-a-sketch.....Mum asks both to give a smile....Chetan goshti smil....Anu roars and acts Kurumbi</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gLGbvv7DsVg')">Thum here</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu eating watermelon.....Mum says call Achan....Anu says Achan Thum here</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=78WRd6PM2tE')">Anuma</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mum asks what she should call Anu....she says Anuma....Mum asks Anu to call Achan....Anu asks Shot (shout)? Mum says yes and An yells SHOOUT ....calls Chettan to eat watermelon bowl</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=enbjH4C43gg')">New pants</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu feeds Dad watermelon....Mum asks whose little girl you are....Dad asks whose cutie pie you are.....Anu tells Dad to buy new pants because it is wet....Dad says you wet it with the watermelon?!.....runs off to call Chetan</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=U1IXbBH9hQE')">Staircase antics</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu at bottom ofsteps, calling Chetan to come down......doing antics on steps....tells Dad to watch her jump....Dad asks all done?....sats Lath time....goes to get more watermelon</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PveNyWj2POY')">Cereal</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu on floor eating cereal by herself....Chettan whines about not being recorded and shows face to camera....Dad warns that face will be recorded for posterity....Dad asks Anu what you are eating....Anu ROARS cereal ....says big thunderstorm....Mum says Pinne Podi</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=aoAj_-HdJEM')">Nice smile</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mum tells Chettan dont use that whiny voice...Dad asks who are you copying.....Anu on dining table fiddling with dishes....Mum asks Chetan to give nice smile...gets a goshti face</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Bexv34buHow')">What that girl did</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu says Thum daddy's chair and squeezes in behind Dad and pushes... Chettan slurping cereal...Mum says not nice, Chettan says it is....Dad asks Anu what that little girl who came yesterday did....Anu has a lot to say about it....Mum says Okke indakkanallo, she never did any of those things....then Anu talks about other things that the girl did</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' href='draw2000.html'>Artists at work</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu and Chettan drawing episodes</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ln6ns_qKSh8')">Mac&Cheese</a>
+<div class='desc-wrapper'>
 <div class='desc'>Chettan helping Mum with making Mac&Cheese.....Anu runs to help (ha!).....rummages around in fridge......not at all pleased that Chetan is helping</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=CROqzT3hQIg')">Chess</a>
+<div class='desc-wrapper'>
 <div class='desc'>Chettan hugs Anu and gives umma....Mum asks for hug and she runs away....gives Mum ummas.....Chetan teaching Anu about chess pieces, bishop rook, Thaween etc</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5pOWFKInWZI')">Dress throwing</a>
+<div class='desc-wrapper'>
 <div class='desc'>General horsing around</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=fhCjPsEF9VA')">Wake and Whine</a>
+<div class='desc-wrapper'>
 <div class='desc'>Chettan & Anu fast asleep on bed in upstairs room with the green walls.....Mum wakes Chettan up...whines and goes back to sleep....gets up and whines again....Anu wakes up and starts  whining</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=6p7odow-qnc')">Read newspaper</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu on Dad's lap listening to Dad "reading" (!) the newspaper....Dad says all done...Anu whines for more.....repeat....brings another paper to make Dad read</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Iq6BInSGFBs')">Comb Dad's hair</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu calls Dad babyhead and something else that Mum tells her is not a nice thing to say....runs off to get a comb and comb's Dad's hair....starts singing</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1qFXol9cILw')">Lion scare</a>
+<div class='desc-wrapper'>
 <div class='desc'>Dad says spider is crawling up Anu's back....Anu looks a bit alarmed....says it's Daddy's and Mummy's hair.....Dad says lion's coming to eat Anu...Anu runs away to Mum crying I'm Thared.....Dad roars at lion and shoo it away....Anu is relieved...Mum says moonu rasham appittattindu....Anu wans milk in Pink Bottle</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=lbtmrAVMXdY')">Antics</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu doing wild antics all over Mum</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_Zh2JEtcKmM')">More antics</a>
+<div class='desc-wrapper'>
 <div class='desc'>More wild antics with Mum</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 </div></div>
 <div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center;">
@@ -447,5 +693,20 @@
         document.getElementById('videoPlayer').src = "";
         document.body.style.overflow = 'auto';
     }
+
+    function toggleDesc(el) {
+        const desc = el.previousElementSibling;
+        desc.classList.toggle('expanded');
+        el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
+    }
+
+    // Check if description is long enough to need "Read more"
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.desc').forEach(d => {
+            if (d.scrollHeight > d.clientHeight) {
+                d.classList.add('is-truncated');
+            }
+        });
+    });
 </script>
 </body></html>

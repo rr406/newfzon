@@ -15,58 +15,91 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; }
+    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
                   display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
-    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; }
+    
+    /* Truncation Logic */
+    .desc-wrapper { position: relative; }
+    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    .desc.expanded { -webkit-line-clamp: unset; display: block; }
+    .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 4px; }
+    .desc:not(.expanded).is-truncated + .read-more { display: inline-block; }
 </style>
 <title>First scenes at Herndon</title></head><body>
 <div class='container'><header><h1>First scenes at Herndon</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FXNT3HNoCvA')">Staring</a>
+<div class='desc-wrapper'>
 <div class='desc'>First time at Herndon....In green lying quietly on the colorful mat....Bro milling around, wants to "see me" in the camera....Baby staring bulge-eyed at bro and camera....Likes being called Kofta baby. Gulab Jam, Rolupolu etc....Lets out a few small squeaks</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KK52ZS_ZwBU')">Squeaking</a>
+<div class='desc-wrapper'>
 <div class='desc'>Baby squeaking and smiling a bit.....startled by bro's scream.....trying to chat with bro.....bro touching cheeks and giving a peck</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=i41RzttEqhw')">Bro and Baby playing</a>
+<div class='desc-wrapper'>
 <div class='desc'>Bro playing with baby</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=nVSQYM3N4oU')">Bro and Baby chatting</a>
+<div class='desc-wrapper'>
 <div class='desc'>Bro talking gibberish...Baby talks back</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=OPUyjs2i_hM')">Baby chewing hand</a>
+<div class='desc-wrapper'>
 <div class='desc'>Bro keeps pulling blanket out of baby's hands...."Blankets are not for biting"....Baby starts chewing hand</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=bF7zfwoyIgI')">Staring again</a>
+<div class='desc-wrapper'>
 <div class='desc'>Baby in yellow dress....Bro turns on flashing toy and scoots away....baby bulge-eyed staring at camera...Mum/dad trying to get response from baby</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=D0LaO0CVb1k')">Smiling?</a>
+<div class='desc-wrapper'>
 <div class='desc'>Baby almost-smiling and chatting with Mum</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kL_1xpIgEzo')">Eying baby photo</a>
+<div class='desc-wrapper'>
 <div class='desc'>Baby staring at baby photo....chewing away both hands....starting to let out a sad cry</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kEtxORG_k6o')">On tummy</a>
+<div class='desc-wrapper'>
 <div class='desc'>Baby in baby bouncer looking around ........lying on tummy.....on baby seat in kitchen chatting with Mum</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 </div></div>
 <div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center;">
@@ -92,5 +125,20 @@
         document.getElementById('videoPlayer').src = "";
         document.body.style.overflow = 'auto';
     }
+
+    function toggleDesc(el) {
+        const desc = el.previousElementSibling;
+        desc.classList.toggle('expanded');
+        el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
+    }
+
+    // Check if description is long enough to need "Read more"
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.desc').forEach(d => {
+            if (d.scrollHeight > d.clientHeight) {
+                d.classList.add('is-truncated');
+            }
+        });
+    });
 </script>
 </body></html>

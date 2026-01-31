@@ -15,168 +15,267 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; }
+    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
                   display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
-    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; }
+    
+    /* Truncation Logic */
+    .desc-wrapper { position: relative; }
+    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    .desc.expanded { -webkit-line-clamp: unset; display: block; }
+    .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 4px; }
+    .desc:not(.expanded).is-truncated + .read-more { display: inline-block; }
 </style>
 <title>2001 - Explore 2001</title></head><body>
 <div class='container'><header><h1>2001 - Explore 2001</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cdY6GRoX3xk')">Suppise</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu tells Dad close your eyes...i have a suppise....a president for you.....Santa brought baby president.....whines a bit while Mum watches TV....shows Dad how she hops</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-SDH69FvJPA')">Shark puzzle</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu doing acrobatics on Mum & Dad....Helping Dad with shark puzzle in kitchen...places a piece and says I did it and gives Kurumbi smile.....hear sounds from living room from Chettan....tells Dad that piece "noth do dare"...pushes piece in and says  "do dare"</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=BSK9NocFxDU')">Crab puzzle</a>
+<div class='desc-wrapper'>
 <div class='desc'>Dad says all done with shark puzzle and tries to weasel out....no luck, Anu wants to do the "Thab" puzzle.....Chettan whining to Dad about something.....Anu says "then u help me. I need a little help"....asks where's the "Saat" (shark), says I want to do that first....Dad says fininh the crab first.....Anu asks where's the "Snathe" (snake)....says I cant puth the piece....Dad getting annoyed, where does it go, think!</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=i6dJEz6udU4')">Pizza delivery</a>
+<div class='desc-wrapper'>
 <div class='desc'>Chettan whining about his puzzle....Anu gos to check out and says I finished mine....Pizza man comes to deliver pizza....Anu excited says Thummon daddy, Amma we bought some pizza....wants to eat now</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jeuEPMTaawk')">Riding Jaduar</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu riding on Chettan's back.....Anu says she is on a "Jaduar"....Mum asks Chettan to put on a Goshti show....Chettan shows finished Pokemon puzzle</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=S5imXk9xHUc')">Hands in Rice</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kAwr3lkI8VU')">Playing on Deck</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wFlIipJBQS4')">Spin around, Green Lion Story</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=7oR2UTdJA5Q')">What's that sound, let's hear</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=4cwwBFq-VI8')">I am tallest, N and Ms</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=lrKZwLGkLas')">Quiz Time</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ohD-V_SlKUw')">Songs I like</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=U2Wh3IjgedE')">Guess the song</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KySRoDTrKs0')">Ice Skating</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PUXZACYyq2Y')">Sing Nursery Rhymes - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=CAgcWjyhvmI')">Sing Nursery Rhymes - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=LQiuW1gl4Io')">Sad to leave US</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=sVPZSwM2TS0')">Take dirt out of toes</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=peiDrJ-dmoo')">Cappucino Cookie Math Quiz</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wMaVrBYsvL0')">Putzin around in kitchen</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZX1B23EEuUI')">Ouch Menon Baby Hurt Me</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FgtlaCE99-A')">With Rohan in Living Room</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AYpSVpctqG8')">Drying Hair - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FS_URA7vNqI')">Drying Hair - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=V0Mvr7GMQZo')">Draw Pokemon, Watch Dora</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ll65b5SKCec')">Sleep please</a>
+<div class='desc-wrapper'>
 <div class='desc'>Anu walks on dining table....Dad trying to get her to sleep but fails!</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=HVVw6lOhkRg')">HM yard with Rohan and Rachna</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=19-rFSASdh8')">HM Yard Anu</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=SvDVb2RWN-8')">HM Yard Arvind with Star</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1-IoXtV3c94')">Roweena, Priya and co - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=nc-mEPKG0Y0')">Roweena, Priya and co - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 </div></div>
 <div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center;">
@@ -202,5 +301,20 @@
         document.getElementById('videoPlayer').src = "";
         document.body.style.overflow = 'auto';
     }
+
+    function toggleDesc(el) {
+        const desc = el.previousElementSibling;
+        desc.classList.toggle('expanded');
+        el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
+    }
+
+    // Check if description is long enough to need "Read more"
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.desc').forEach(d => {
+            if (d.scrollHeight > d.clientHeight) {
+                d.classList.add('is-truncated');
+            }
+        });
+    });
 </script>
 </body></html>

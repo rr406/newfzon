@@ -15,43 +15,67 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; }
+    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
                   display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
-    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; }
+    
+    /* Truncation Logic */
+    .desc-wrapper { position: relative; }
+    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    .desc.expanded { -webkit-line-clamp: unset; display: block; }
+    .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 4px; }
+    .desc:not(.expanded).is-truncated + .read-more { display: inline-block; }
 </style>
 <title>Baby gets a name</title></head><body>
 <div class='container'><header><h1>Baby gets a name</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gVouC2XMfW8')">Bro whining</a>
+<div class='desc-wrapper'>
 <div class='desc'>Bro in pajama whining about baby....Baby lookng at bro....cycling vigorously</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9D_d87z2CdU')">Dad sing to Baby</a>
+<div class='desc-wrapper'>
 <div class='desc'>Dad rocking baby back and forth singing Twinkle....baby very quiet but eyes wide open</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=p_lKNJ8QyyI')">Baby smiling?</a>
+<div class='desc-wrapper'>
 <div class='desc'>Baby lying on cushion on dad's lap....still wide awake....big whine/bawl session by bro....baby breaking a tiny smile at mummy....sticks tongue out....Bro kicks baby accidentally...bro gets ticked off....baby starta bawling</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9cTwKpc6jKM')">Baby Naming - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Baby Naming Ceremony at Beacontree</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9VTU945smPI')">Baby Naming - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Contd...Baby Naming Ceremony at Beacontree</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=TJX7wV7fxjQ')">Baby Naming - 3</a>
+<div class='desc-wrapper'>
 <div class='desc'>Contd...Baby Naming Ceremony at Beacontree</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 </div></div>
 <div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center;">
@@ -77,5 +101,20 @@
         document.getElementById('videoPlayer').src = "";
         document.body.style.overflow = 'auto';
     }
+
+    function toggleDesc(el) {
+        const desc = el.previousElementSibling;
+        desc.classList.toggle('expanded');
+        el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
+    }
+
+    // Check if description is long enough to need "Read more"
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.desc').forEach(d => {
+            if (d.scrollHeight > d.clientHeight) {
+                d.classList.add('is-truncated');
+            }
+        });
+    });
 </script>
 </body></html>

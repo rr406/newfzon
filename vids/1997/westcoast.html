@@ -15,68 +15,107 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; }
+    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
                   display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
-    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; }
+    
+    /* Truncation Logic */
+    .desc-wrapper { position: relative; }
+    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    .desc.expanded { -webkit-line-clamp: unset; display: block; }
+    .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 4px; }
+    .desc:not(.expanded).is-truncated + .read-more { display: inline-block; }
 </style>
 <title>West Coast Trip</title></head><body>
 <div class='container'><header><h1>West Coast Trip</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=VDG_rqPG4f4')">Christmas at Chitta's - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mr. wakes up...whines about having to open the Christmas gifts....after some coaxing, crawls over to lighted Christmas tree and tears off the gift wraps with help from Mum and Chitta</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=XqlK-QsPfqc')">Christmas at Chitta's - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mum, Chitta, Santosh opening others' gifts....Mr. whines on and on Open Open Open my gift.....Mr. explains why he does not have to thank Santa</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=EoriKkEfRjQ')">Christmas at Chitta's - 3</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mr. helps open Dad's gift....Chitta helps Mr. open his gift.....Dad says Hey, what's that....Mr. tells him you can't say Hey, how may times I told you not say Hey....Dad unwraps another of Mr's gifts</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FuzqFa1xsws')">Christmas at Chitta's - 4</a>
+<div class='desc-wrapper'>
 <div class='desc'>Chitta tells Mr she did not get any gift....Mr. give her one of his gifts and says after luthing at it, you have to give it back</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ss1Um3MBnUI')">Christmas at Chitta's - 5</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mr starts putting together the puzzle toy.....Dad opens the train toy box but Mr. seems uninterested....Dad says he will return it to Santa...Mr says he will play with it after finishing puzzle....whines don't give it back to SEINFELD!</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=TIARH8Mncqk')">Mystery Spot, Santa Cruz - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>View of Outside</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=GzyPtmiNbU0')">Mystery Spot, Santa Cruz - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Defying Gravity</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=mco3UDCEVA8')">Lake Tahoe - Snow</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mr., Chitta & Santosh throwing snowballs....Mum next to snowman</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cDl3fJU8_2I')">Lake Tahoe - Scenery</a>
+<div class='desc-wrapper'>
 <div class='desc'>Panoramic view of lake & mountains</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=JS_ouCkagV4')">Inside Tahoe Cabin - 1</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mr. babbling away</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=GMDrKgINCSc')">Inside Tahoe Cabin - 2</a>
+<div class='desc-wrapper'>
 <div class='desc'>Mr. starts bawling when Chitta complains to Dad about him</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
 </div></div>
 </div></div>
 <div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center;">
@@ -102,5 +141,20 @@
         document.getElementById('videoPlayer').src = "";
         document.body.style.overflow = 'auto';
     }
+
+    function toggleDesc(el) {
+        const desc = el.previousElementSibling;
+        desc.classList.toggle('expanded');
+        el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
+    }
+
+    // Check if description is long enough to need "Read more"
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.desc').forEach(d => {
+            if (d.scrollHeight > d.clientHeight) {
+                d.classList.add('is-truncated');
+            }
+        });
+    });
 </script>
 </body></html>
