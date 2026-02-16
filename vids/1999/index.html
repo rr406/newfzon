@@ -10,18 +10,27 @@
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
     h1 { font-size: 2rem; color: #111827; margin: 0; }
     .card-grid { display: grid; gap: 1rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-            padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
-            display: flex; align-items: flex-start; gap: 15px; }
-    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    
+    .card { 
+        background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
+        padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: pointer; /* Makes the whole card feel clickable */
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); background-color: #f9fafb; }
+    
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     
-    /* Adjusted to allow partial link styling */
     .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
-    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
-    .link-text:hover { text-decoration: underline; }
+    
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; /* Always underlined as requested */
+        cursor: pointer; 
+    }
+    .link-text:hover { color: #1d4ed8; text-decoration: none; }
     
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
@@ -31,115 +40,115 @@
 </style>
 <title>1999 - Explore 1999</title></head><body>
 <div class='container'><header><h1>1999 - Explore 1999</h1></header><div class='card-grid'>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='babymovies99.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='link-container'><a class='link-text' href='babymovies99.html'>Baby Movie Collection</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Awesome Baby Movies!</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='babyfeed99.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
 <div class='link-container'><a class='link-text' href='babyfeed99.html'>Feeding Saga</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>The herculean task begins!</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='winter99.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Mar-1999</div>
 <div class='link-container'><a class='link-text' href='winter99.html'>Winter Episodes</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>During peak winter</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='babypack_7.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Mar-1999</div>
 <div class='link-container'><a class='link-text' href='babypack_7.html'>More Baby Movies</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Awesome Baby Movies!</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='vishu99.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
 <div class='link-container'><a class='link-text' href='vishu99.html'>Aluva Vishu Trip</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby's first trip to India</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=PQKn-lr96L4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PQKn-lr96L4')">Reston Pumpkin Farm</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PQKn-lr96L4'); event.stopPropagation();">Reston Pumpkin Farm</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Frolicking in Reston Pumpkin Farm</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='anu99_bday.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Oct-1999</div>
 <div class='link-container'><a class='link-text' href='anu99_bday.html'>Anu turning One!</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Prep for Anu's 1st Birthday</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='anuarv99_bday.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Oct-1999</div>
 <div class='link-container'><a class='link-text' href='anuarv99_bday.html'>Combined Birthday Celebrations</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu's 1st & Arvind's 4th on 18-Oct-1999</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='pattupavada_99.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Oct-1999</div>
 <div class='link-container'><a class='link-text' href='pattupavada_99.html'>Pattu Pavada Blockbuster Series</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Nine action-packed episodes starring mighty Pattu Pavada Gal!!</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='halloween_99.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Oct-1999</div>
 <div class='link-container'><a class='link-text' href='halloween_99.html'>Halloween - 1999</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Dressing up</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=igH0ZQyJxAY')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Nov-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=igH0ZQyJxAY')">Babbling</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=igH0ZQyJxAY'); event.stopPropagation();">Babbling</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>on the electric swing</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='bubba99.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Nov-1999</div>
 <div class='link-container'><a class='link-text' href='bubba99.html'>The Great Bubba Search</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Searching for Bubba</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=fn0vkNcHlJI')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=fn0vkNcHlJI')">Horse around - 1</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=fn0vkNcHlJI'); event.stopPropagation();">Horse around - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro and sis horsing around</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=c3R7PxYLc4I')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=c3R7PxYLc4I')">Horse around - 2</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=c3R7PxYLc4I'); event.stopPropagation();">Horse around - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro and sis more horsing around</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
 </div></div>

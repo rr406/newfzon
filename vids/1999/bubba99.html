@@ -10,18 +10,27 @@
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
     h1 { font-size: 2rem; color: #111827; margin: 0; }
     .card-grid { display: grid; gap: 1rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-            padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
-            display: flex; align-items: flex-start; gap: 15px; }
-    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    
+    .card { 
+        background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
+        padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: pointer; /* Makes the whole card feel clickable */
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); background-color: #f9fafb; }
+    
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     
-    /* Adjusted to allow partial link styling */
     .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
-    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
-    .link-text:hover { text-decoration: underline; }
+    
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; /* Always underlined as requested */
+        cursor: pointer; 
+    }
+    .link-text:hover { color: #1d4ed8; text-decoration: none; }
     
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
@@ -31,52 +40,52 @@
 </style>
 <title>The Great Bubba Search</title></head><body>
 <div class='container'><header><h1>The Great Bubba Search</h1></header><div class='card-grid'>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=KriOJhz0BAc')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Nov-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KriOJhz0BAc')">Bubba Search - 1</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KriOJhz0BAc'); event.stopPropagation();">Bubba Search - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>The quest begins</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=eiOAgUoLeI4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Nov-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=eiOAgUoLeI4')">A small distraction</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=eiOAgUoLeI4'); event.stopPropagation();">A small distraction</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Distraction -Magnet & Pringles "Mumma", Anu shows where the bathroom is</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=AiHOHPq7z7A')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Nov-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AiHOHPq7z7A')">Bubba Search - 2</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AiHOHPq7z7A'); event.stopPropagation();">Bubba Search - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>The quest resumes</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=Qk-0CiieJXg')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Nov-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Qk-0CiieJXg')">Another distraction</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Qk-0CiieJXg'); event.stopPropagation();">Another distraction</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Distraction - Where's the matchbox? Dad tryng to feed hot pickle. Pick rice grains off mat</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=H_CQ9ApwEzI')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Nov-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=H_CQ9ApwEzI')">Bubba Found!</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=H_CQ9ApwEzI'); event.stopPropagation();">Bubba Found!</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bubba found! Matchbox spotted. Mum asks "out-of-context" question. Bubble blowing</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=eu7WY4Qg-q8')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Nov-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=eu7WY4Qg-q8')">Bubba Tantrum</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=eu7WY4Qg-q8'); event.stopPropagation();">Bubba Tantrum</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Tantrums for putting Bubba away. Bro makes sudden appearance</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
 </div></div>

@@ -10,18 +10,27 @@
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
     h1 { font-size: 2rem; color: #111827; margin: 0; }
     .card-grid { display: grid; gap: 1rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-            padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
-            display: flex; align-items: flex-start; gap: 15px; }
-    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    
+    .card { 
+        background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
+        padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: pointer; /* Makes the whole card feel clickable */
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); background-color: #f9fafb; }
+    
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     
-    /* Adjusted to allow partial link styling */
     .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
-    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
-    .link-text:hover { text-decoration: underline; }
+    
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; /* Always underlined as requested */
+        cursor: pointer; 
+    }
+    .link-text:hover { color: #1d4ed8; text-decoration: none; }
     
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
@@ -31,44 +40,44 @@
 </style>
 <title>Waiting for Baby</title></head><body>
 <div class='container'><header><h1>Waiting for Baby</h1></header><div class='card-grid'>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=amYuRJSWW2M')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=amYuRJSWW2M')">Waiting for Baby - 1</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=amYuRJSWW2M'); event.stopPropagation();">Waiting for Baby - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Nursery Rhymes...Rekha in town...Pecking tummy...Who's in  the tummy...What's the baby going to call you?</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=PjQIr3sHawQ')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PjQIr3sHawQ')">Waiting for Baby - 2</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PjQIr3sHawQ'); event.stopPropagation();">Waiting for Baby - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mummy & big tummy.....Rekha making tea</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=0MQO1IbJ8Xc')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0MQO1IbJ8Xc')">Waiting for Baby - 3</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0MQO1IbJ8Xc'); event.stopPropagation();">Waiting for Baby - 3</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Note from Mrs.Owens......Going to name her Abigail? Or Sammy? .....Tell her a story or sing her a song</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=hg4jPZrh1Z4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=hg4jPZrh1Z4')">Waiting for Baby - 4</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=hg4jPZrh1Z4'); event.stopPropagation();">Waiting for Baby - 4</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Chat with Rekha</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=FQOFimt6AvI')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FQOFimt6AvI')">Waiting for Baby - 5</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FQOFimt6AvI'); event.stopPropagation();">Waiting for Baby - 5</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Chat with Rekha....I wanna record my video....play with Lego....hum away</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
 </div></div>

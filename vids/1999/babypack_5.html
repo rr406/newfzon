@@ -10,18 +10,27 @@
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
     h1 { font-size: 2rem; color: #111827; margin: 0; }
     .card-grid { display: grid; gap: 1rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-            padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
-            display: flex; align-items: flex-start; gap: 15px; }
-    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    
+    .card { 
+        background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
+        padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: pointer; /* Makes the whole card feel clickable */
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); background-color: #f9fafb; }
+    
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     
-    /* Adjusted to allow partial link styling */
     .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
-    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
-    .link-text:hover { text-decoration: underline; }
+    
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; /* Always underlined as requested */
+        cursor: pointer; 
+    }
+    .link-text:hover { color: #1d4ed8; text-decoration: none; }
     
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
@@ -31,76 +40,76 @@
 </style>
 <title>Baby Movie Pack - 5</title></head><body>
 <div class='container'><header><h1>Baby Movie Pack - 5</h1></header><div class='card-grid'>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=0PMWrZxsO4s')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0PMWrZxsO4s')">Feeding</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0PMWrZxsO4s'); event.stopPropagation();">Feeding</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby sitting on Dad's lap....Dad trying to feed baby some Naan(?)</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=OUeR-9pWzCg')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=OUeR-9pWzCg')">Bawling</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=OUeR-9pWzCg'); event.stopPropagation();">Bawling</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby on Mum's lap.....Bro milling around....Baby in bad mood, bawling.....stops and stares when camera comes close and when Mum keeps whacking remote</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=S-ztNSc1IyE')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=S-ztNSc1IyE')">Pacify with rattle</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=S-ztNSc1IyE'); event.stopPropagation();">Pacify with rattle</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Still in bad mood....Mum lays down baby on sofa and quiets her with a rattle</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=YtVeuSn-pUo')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=YtVeuSn-pUo')">Horsing around - 1</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=YtVeuSn-pUo'); event.stopPropagation();">Horsing around - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Dad horsing around with Baby.....Bro blocking camera....Baby staring at Dad</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=09zKDxOtjbo')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=09zKDxOtjbo')">Horsing around - 2</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=09zKDxOtjbo'); event.stopPropagation();">Horsing around - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More Dad horsing around with Baby.....Dad sings Greensleeves to Baby....Baby is entranced</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=aJL_H0tTCJw')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=aJL_H0tTCJw')">All-round action</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=aJL_H0tTCJw'); event.stopPropagation();">All-round action</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro shows Goshti faces....Dad talking more nonsense to Baby....Bro shows Lego tower he made....then wants to show his artwork....Mum calls out to Baby and she turns around and smiles</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=swtyCu3JgNc')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=swtyCu3JgNc')">Feeding</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=swtyCu3JgNc'); event.stopPropagation();">Feeding</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Dad feeding baby in stroller in kitchen....Mum says Thuppi Kalayale KalliPenne</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=eHL4xkJ-pz0')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=eHL4xkJ-pz0')">Jan to Mar 1999</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=eHL4xkJ-pz0'); event.stopPropagation();">Jan to Mar 1999</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Snowing outside house....Bro shoveling snow</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=-tRgF6Oqcdc')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-tRgF6Oqcdc')">Jan to Mar 1999</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-tRgF6Oqcdc'); event.stopPropagation();">Jan to Mar 1999</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More snow scenes - deck, behind and front of house</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
 </div></div>

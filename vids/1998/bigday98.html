@@ -10,18 +10,27 @@
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
     h1 { font-size: 2rem; color: #111827; margin: 0; }
     .card-grid { display: grid; gap: 1rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-            padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
-            display: flex; align-items: flex-start; gap: 15px; }
-    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    
+    .card { 
+        background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
+        padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: pointer; /* Makes the whole card feel clickable */
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); background-color: #f9fafb; }
+    
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     
-    /* Adjusted to allow partial link styling */
     .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
-    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
-    .link-text:hover { text-decoration: underline; }
+    
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; /* Always underlined as requested */
+        cursor: pointer; 
+    }
+    .link-text:hover { color: #1d4ed8; text-decoration: none; }
     
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
@@ -31,68 +40,68 @@
 </style>
 <title>The Big Day</title></head><body>
 <div class='container'><header><h1>The Big Day</h1></header><div class='card-grid'>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=_fWKSFZBuU4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_fWKSFZBuU4')">Nurses in action - 1</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_fWKSFZBuU4'); event.stopPropagation();">Nurses in action - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Nurses working on baby and yapping away</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=7owBdM4oFek')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=7owBdM4oFek')">Nurses in action - 2</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=7owBdM4oFek'); event.stopPropagation();">Nurses in action - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Nurses weighing baby</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=jgRXAHSpfh4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jgRXAHSpfh4')">Nurses in action - 2</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jgRXAHSpfh4'); event.stopPropagation();">Nurses in action - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Nurses measuring head.....Injection....Putting on cap</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=-gPOqmWtZzc')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-gPOqmWtZzc')">Baby in action - 1</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-gPOqmWtZzc'); event.stopPropagation();">Baby in action - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Wide awake...no bawling like bro</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=vqeX6noyY7o')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=vqeX6noyY7o')">Baby in action - 2</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=vqeX6noyY7o'); event.stopPropagation();">Baby in action - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Still wide awake, calm and quiet</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=2qYmojv8IVc')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=2qYmojv8IVc')">Baby in action - 3</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=2qYmojv8IVc'); event.stopPropagation();">Baby in action - 3</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Fast asleep in bassinet</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=SRwfNl3sBQs')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=SRwfNl3sBQs')">Baby in action - 4</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=SRwfNl3sBQs'); event.stopPropagation();">Baby in action - 4</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Waking up in bassinet</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=QUEnMq2inBU')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=QUEnMq2inBU')">Baby in action - 5</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=QUEnMq2inBU'); event.stopPropagation();">Baby in action - 5</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Awake & squirming, yawning.....Bro visits with ChItta....Bro holds baby's hand</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
 </div></div>

@@ -10,18 +10,27 @@
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
     h1 { font-size: 2rem; color: #111827; margin: 0; }
     .card-grid { display: grid; gap: 1rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-            padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
-            display: flex; align-items: flex-start; gap: 15px; }
-    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    
+    .card { 
+        background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
+        padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: pointer; /* Makes the whole card feel clickable */
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); background-color: #f9fafb; }
+    
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     
-    /* Adjusted to allow partial link styling */
     .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
-    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
-    .link-text:hover { text-decoration: underline; }
+    
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; /* Always underlined as requested */
+        cursor: pointer; 
+    }
+    .link-text:hover { color: #1d4ed8; text-decoration: none; }
     
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
@@ -31,107 +40,107 @@
 </style>
 <title>2000 - Explore 2000</title></head><body>
 <div class='container'><header><h1>2000 - Explore 2000</h1></header><div class='card-grid'>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_jan_snow.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Jan-2000</div>
 <div class='link-container'><a class='link-text' href='2000_jan_snow.html'>Snow episodes</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>at 13523 Highland Mews in Jan/Feb 2000</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_febmar_var.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
 <div class='link-container'><a class='link-text' href='2000_febmar_var.html'>Anu reading</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>book, crawling up steps, dancing, saying words, Kurumbi look, water plants, Arvind goshti and various others from Feb/Mar 2000</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_cherryblossom.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='link-container'><a class='link-text' href='2000_cherryblossom.html'>Washington DC Trip</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>in April 2000 to see Cherry Blossoms</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_mid.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='link-container'><a class='link-text' href='2000_mid.html'>Ammu & Muthachan</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>in DC in mid 2000, kids play with Rohan, sing Big Big water and nursery rhymes and various other</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='ace2000.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>MID-2000</div>
 <div class='link-container'><a class='link-text' href='ace2000.html'>ACE Summer Program</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>at Academy of Christian Education around May (?) 2000</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_nuggets.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='link-container'><a class='link-text' href='2000_nuggets.html'>Anu enjoying</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>chicken nuggets, recounting zoo trip, chatting on table, throwing tantrm and various others from June to Aug 2000</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_barney.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='link-container'><a class='link-text' href='2000_barney.html'>Anu sings Barney</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>...and other nonsense, Chettan in goshti mode bothering Anu, Mum bottlefeeding, Menon Baby and various others from June to Aug 2000</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='draw2000.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
 <div class='link-container'><a class='link-text' href='draw2000.html'>Artists at work</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu and Chettan drawing episodes</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_chetan.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='link-container'><a class='link-text' href='2000_chetan.html'>Chettan and Anu</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>helping Mum cook, horsing around; Anu readin paper with Dad, combing Dad's hair and various others from mid 2000</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_anu.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='link-container'><a class='link-text' href='2000_anu.html'>Anu talks about</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Lambb4 time, messing arounf with VCR, Baby Mozart cassette and various others from mid 2000</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_tort.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='link-container'><a class='link-text' href='2000_tort.html'>Tortellini hoggging</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>episodes starring Chetan and Anu</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_bday.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='link-container'><a class='link-text' href='2000_bday.html'>Birthday and other episodes</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu's 2nd and Chetan's 6th birthday and other clips from around that time</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='2000_wrap.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='link-container'><a class='link-text' href='2000_wrap.html'>Wrapping up 2000</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Final episodes from 2000</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='nanuvisit_2000_01.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' href='nanuvisit_2000_01.html'>Nanu & family</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>visiting DC for Christmas and New Year</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
 </div></div>

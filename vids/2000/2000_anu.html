@@ -10,18 +10,27 @@
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
     h1 { font-size: 2rem; color: #111827; margin: 0; }
     .card-grid { display: grid; gap: 1rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-            padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
-            display: flex; align-items: flex-start; gap: 15px; }
-    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    
+    .card { 
+        background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
+        padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: pointer; /* Makes the whole card feel clickable */
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); background-color: #f9fafb; }
+    
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     
-    /* Adjusted to allow partial link styling */
     .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
-    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
-    .link-text:hover { text-decoration: underline; }
+    
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; /* Always underlined as requested */
+        cursor: pointer; 
+    }
+    .link-text:hover { color: #1d4ed8; text-decoration: none; }
     
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
@@ -31,140 +40,140 @@
 </style>
 <title>Anu talks about</title></head><body>
 <div class='container'><header><h1>Anu talks about</h1></header><div class='card-grid'>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=tZj51Hg49Vo')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=tZj51Hg49Vo')">Messing with VCR</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=tZj51Hg49Vo'); event.stopPropagation();">Messing with VCR</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Chettan & Anu showing Pokemon cards to camera and naming them.....Anu runs to dad and says I thame run thoo yu....crawls through Dad's legs and tries putting cassette into VCR and turing it on</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=8GdRzt5QU7c')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=8GdRzt5QU7c')">Lamb44time</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=8GdRzt5QU7c'); event.stopPropagation();">Lamb44time</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu naming the cassettes - Baby Mozart, Land before time etc....Anu chats about Daddy-son and Daddy-suaghter time.....Mum tells ANu look at the mess you've made</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=NtkS7TcvYoY')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=NtkS7TcvYoY')">Clean up mess</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=NtkS7TcvYoY'); event.stopPropagation();">Clean up mess</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu helps (ha!) Mum clean up mess....gives "nice" smile to camera</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=k2xDvjl-C9Y')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=k2xDvjl-C9Y')">Cutie Pie</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=k2xDvjl-C9Y'); event.stopPropagation();">Cutie Pie</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu answers whose little girl/cutie pie are you....then laughs heartily... gives opinion on whether CHetan is a good boy......gives Kurumbi look....Dad suggest Haley Smith park visit.....Anu says it's Darth Owtside</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=g5K9vApImxU')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=g5K9vApImxU')">Who to sleep with</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=g5K9vApImxU'); event.stopPropagation();">Who to sleep with</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu says who she wants to sleep with....gives Kurumbi smile....Dad asks for Gulabs....Anu shows how Chetan whines</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=ukq-cQXJNMc')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ukq-cQXJNMc')">Mera Deevan Tora Tadaz</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ukq-cQXJNMc'); event.stopPropagation();">Mera Deevan Tora Tadaz</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Dad says Anu swing low....Anu wants swing high....Mum getting tired, let's clean up mess....Dad asks Mum to repeat, says it's all on tape....Trying to get Anu to sing some songs but no luck....Anu wants Dad to sing How I wonder....wants Mum to sing there was a farmer hadadod....says Chettan played Baby Mozart on piano.....and old Matdonald had a fram.....says Dad sings Mer Deevn Tora Tadaz to her</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=_WzeVLGhO1U')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_WzeVLGhO1U')">More songs</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_WzeVLGhO1U'); event.stopPropagation();">More songs</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Trying to get Anu to sing more songs and say prayers.....stubborn mule refuses....even when Dad threates to give her toys to Rachna baby</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=C5liFZU4d-A')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=C5liFZU4d-A')">Turn ayound</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=C5liFZU4d-A'); event.stopPropagation();">Turn ayound</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu shows how she turns ayound....wearing new red dress and eating podi but not idli...gives kurumbi look.....Rohan says he is done eating.....still trying hard to get Anu to sing....Dad says he will ask Rachna baby to sing</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=0NBWPvNMWeU')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0NBWPvNMWeU')">Pink Lion story</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0NBWPvNMWeU'); event.stopPropagation();">Pink Lion story</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu says Chettan can sing the (something) song....Dad asks Anu to say Pink Lion story....says does not membur it......says it's mammoth and colothal....Rohan appears.....Anu continuing to lick podi......discussions on whether red or green or blue car is better</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=RE3eZ-3Yfa4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=RE3eZ-3Yfa4')">Anu in box</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=RE3eZ-3Yfa4'); event.stopPropagation();">Anu in box</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Dad carrying Anu in toy box....says going to library, tells Mum bye bye....Chettan says he and ANu are eating Indian noodles....</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=UjZ4pih607Y')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=UjZ4pih607Y')">Hose play</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=UjZ4pih607Y'); event.stopPropagation();">Hose play</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu eating without dress....Mum asks where it is....says I lost it...Anu playing with hose in front yard....wets Arvind</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=muOHuv7mX2k')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=muOHuv7mX2k')">Big tantrum</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=muOHuv7mX2k'); event.stopPropagation();">Big tantrum</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Chettan takes hose and wets Anu.... big tantrum ensues....hose play ends....Anu running round saying I'm monther.....both saying they are eating tortellini</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=w4AaYh4hTY0')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=w4AaYh4hTY0')">Mum's curry</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=w4AaYh4hTY0'); event.stopPropagation();">Mum's curry</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum asks Dad if he liked the curry. in the afternoon...Dad says excellent....CHetan says I knew you would say it....Mum says are you saying it for the camers?.....Crazy little monther still running around...Mum cooking......Chetan enjoying tortellini and talks about his reading group....Anu babbling in background</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=AzXC3X4kRUo')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AzXC3X4kRUo')">Dad songs</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AzXC3X4kRUo'); event.stopPropagation();">Dad songs</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Dad sings DUm maro Dum and Mera Jeeven Kora Kagaz while bottle-feeding Anu</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=UtGcu3AeiNE')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=UtGcu3AeiNE')">Dyu Vembur</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=UtGcu3AeiNE'); event.stopPropagation();">Dyu Vembur</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu asks Dad to sing "Dyu vembur"...says she remembers she used to be a boy when she grew up...talks about huge, colotha. mammoth, gigantic pink lion....says she is both Mummy's and Daddy's little girl....</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=qGNj-q23tUs')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=qGNj-q23tUs')">Anu smile</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=qGNj-q23tUs'); event.stopPropagation();">Anu smile</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Chetan on dining table drinking milk....Anu on chair, both staring at camera....Anu wants to see Dad & Chetan  "in pither".....smiles with eyes shut....Mum says open eyes.....opens mouth wide open.....wants to see CHetan and Mum in video</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=dLB7fv_m4mg')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=dLB7fv_m4mg')">Carry me Tantrum</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=dLB7fv_m4mg'); event.stopPropagation();">Carry me Tantrum</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Tantrum to be carried....CHetan goes upstairs to get Pokemon book....Anu wants milk in pink bottle and blue and pink popsickle....Chetan shows Pokemon book</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
 </div></div>

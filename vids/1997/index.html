@@ -10,18 +10,27 @@
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
     h1 { font-size: 2rem; color: #111827; margin: 0; }
     .card-grid { display: grid; gap: 1rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-            padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
-            display: flex; align-items: flex-start; gap: 15px; }
-    .card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    
+    .card { 
+        background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
+        padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: pointer; /* Makes the whole card feel clickable */
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--primary); background-color: #f9fafb; }
+    
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
     
-    /* Adjusted to allow partial link styling */
     .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
-    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
-    .link-text:hover { text-decoration: underline; }
+    
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; /* Always underlined as requested */
+        cursor: pointer; 
+    }
+    .link-text:hover { color: #1d4ed8; text-decoration: none; }
     
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
@@ -31,156 +40,156 @@
 </style>
 <title>Twas [[1997]] when there was no internet</title></head><body>
 <div class='container'><header><h1>Twas [[1997]] when there was no internet</h1></header><div class='card-grid'>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=LD9SHkkeegc')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Mar-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=LD9SHkkeegc')">Soulful prayer</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=LD9SHkkeegc'); event.stopPropagation();">Soulful prayer</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>to Lord Narayana sung with fervent devotion ... albeit ending with a threat of mild violence</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='tabletop.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Mar-1997</div>
 <div class='link-container'><a class='link-text' href='tabletop.html'>Tabletop Storyteller</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Epic stories from the master storyteller</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=IkUn_oAtrDk')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=IkUn_oAtrDk')">Bother Mom</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=IkUn_oAtrDk'); event.stopPropagation();">Bother Mom</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum lying down....Poyi Thozhuvu.... matchbox venum</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=jQWZauTadCM')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jQWZauTadCM')">Sami & Matchbox</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jQWZauTadCM'); event.stopPropagation();">Sami & Matchbox</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Praying to Sami; Gimme Matchbox</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='milk.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
 <div class='link-container'><a class='link-text' href='milk.html'>Milk Episode</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Adventures of milkman</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=UegeAvaJmo4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=UegeAvaJmo4')">Playtime with Mom - 1</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=UegeAvaJmo4'); event.stopPropagation();">Playtime with Mom - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Play with Mum</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=v5hh7cLiKpU')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=v5hh7cLiKpU')">Playtime with Mom - 2</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=v5hh7cLiKpU'); event.stopPropagation();">Playtime with Mom - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Play with Mum</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=9cjgxlriGA4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9cjgxlriGA4')">Don't biraake</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9cjgxlriGA4'); event.stopPropagation();">Don't biraake</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>the Lego tower - veenatte birake aavum</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=tXu1Juzp6NI')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=tXu1Juzp6NI')">Drive to medical</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=tXu1Juzp6NI'); event.stopPropagation();">Drive to medical</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>shop to buy medicine- Boo alla, Geen alla, Red Red</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=RTNWIKAg-tk')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=RTNWIKAg-tk')">Naan shoppakarinde</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=RTNWIKAg-tk'); event.stopPropagation();">Naan shoppakarinde</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>aduthe pote medicine medikyam; Ammakye help cheyannam</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=WdONXseIUwU')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=WdONXseIUwU')">Chomping away</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=WdONXseIUwU'); event.stopPropagation();">Chomping away</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>on Pacha Chor</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=ZfuVGgsbEHw')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZfuVGgsbEHw')">Order Burger and fries and</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZfuVGgsbEHw'); event.stopPropagation();">Order Burger and fries and</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>... Panther pons, eat, I'm very sad</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='rccfirst.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Sep-1997</div>
 <div class='link-container'><a class='link-text' href='rccfirst.html'>Geting ready</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>to go to school on first day of Reston Childrens Cente</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=gCZJ1tE9n1E')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gCZJ1tE9n1E')">Yay it's Onam</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gCZJ1tE9n1E'); event.stopPropagation();">Yay it's Onam</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Pookalam....First Onam in USA</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='3rdbday.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Oct-1997</div>
 <div class='link-container'><a class='link-text' href='3rdbday.html'>Third Birthday</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>celebrations at Beacontree Lake Drive apartment in Reston</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='rcchalloween.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Oct-1997</div>
 <div class='link-container'><a class='link-text' href='rcchalloween.html'>Halloween at</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Reston Childrens Center</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='ojtime.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Oct-1997</div>
 <div class='link-container'><a class='link-text' href='ojtime.html'>OJ Time</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>for son and dad</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=it01Bss-1PU')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Nov-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=it01Bss-1PU')">Elmer</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=it01Bss-1PU'); event.stopPropagation();">Elmer</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Reading Elmer Book (read the book yourself <a href="https://drive.google.com/file/d/1UHPrkB55foZHZLe2Go4zruX0yurkTMi3/view?usp=sharing">here</a>)</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
-<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='card' onclick="window.location.href='westcoast.html'"><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
 <div class='date-stamp'>Dec-1997</div>
 <div class='link-container'><a class='link-text' href='westcoast.html'>West Coast Trip</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Visit Rekha & Santosh</div>
-<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
 </div>
 </div></div>
 </div></div>
