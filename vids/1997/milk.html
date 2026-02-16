@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Milk Episode</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=n3fu_lJoB3Y')">Quiet contemplation</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=n3fu_lJoB3Y')">Quiet contemplation</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>while enjoying milk</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ItnLvZDR8nU')">Knocks milk</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ItnLvZDR8nU')">Knocks milk</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>down on to carpet; Super whining for more milk;</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jnFkdImOCpo')">Whine to mom</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jnFkdImOCpo')">Whine to mom</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>...Knocks down another cup; Whine on and on</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cO41Ya8RfIU')">Half an hour orangatte</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cO41Ya8RfIU')">Half an hour orangatte</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Kutta, says Mum....Mr. says Naan Ongatte, clambers up on to bed and cuddles up with Mum.....says Achan ammakye camcorder epulum vakkyum....Mum says Ammakye deshyam varum alle...Mr chuckles....starts making funny sounds keeping Mum awake</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_6UNXodZvd8')">Inni kannadachatte</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_6UNXodZvd8')">Inni kannadachatte</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>kedaku, pleads Mum, allengi Vello Palo poyi kudikkyu....Mr keeps making funny sounds....Paal evidaya kalanje</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wvPptcp1aQA')">I'm VERY ANGRY</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wvPptcp1aQA')">I'm VERY ANGRY</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Avide careptil far away paal kalanju, says Mr....Mum asks if he spilled the whole glass....Mr all konji....Mum to Dad Inni Madi adu off cheyu, tells Mr. Off cheyan parayu....Mr says OFF with stern face, I get very angry, makes ANGRY face and says I'm very ANGRY, I'm TURN IT...OFF....Mum says I'm trying to sleep for 5 minutes...Eee kuttiye angade kondupovu</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -108,7 +110,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

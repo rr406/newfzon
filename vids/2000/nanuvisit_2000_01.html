@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Nanu & family</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=NFJbKtDmwg0')">Maya & Mum decorating</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=NFJbKtDmwg0')">Maya & Mum decorating</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Christmas tree in living room, assisted ably by Chettan and Anu</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KBPuDLkglyk')">More decorating</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KBPuDLkglyk')">More decorating</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Christmas tree</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=sgw32wjdQlY')">Anu whines Chettan</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=sgw32wjdQlY')">Anu whines Chettan</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>put snow on my baath (back)....Mum asks but what did you do to him....(smile) I not do sumtin.....licking falling snow....Arvind shoveling snow....Anu trudging knee deep in snow</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=RXUb8n2p68M')">Anu wandering</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=RXUb8n2p68M')">Anu wandering</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>away in the snow.........says making snowmaaan.....tells Chetan to thand here and luth at mammy.....Chettan tells Mum he was only pretending to throw snow at Anu</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cdKjy5JS_wk')">Unwrapping gifts</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cdKjy5JS_wk')">Unwrapping gifts</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>with Nanu & family in living room</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5uL4kERcYfI')">Mega Anu tantrum</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5uL4kERcYfI')">Mega Anu tantrum</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>when Nanu opens gift for her</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -79,7 +81,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=I4iUtyJDaio')">More unwrapping</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=I4iUtyJDaio')">More unwrapping</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>of Christmas gifts</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -87,7 +89,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=7PrusXLFOTo')">Post Christmas</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=7PrusXLFOTo')">Post Christmas</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Chettan watching TV, Anu sleeping on couch</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -95,7 +97,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=TiMdNHT_LXA')">Everybody chilling</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=TiMdNHT_LXA')">Everybody chilling</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>in living room waiting for 2001</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -103,7 +105,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5xfIkVUaxnk')">Dinner</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5xfIkVUaxnk')">Dinner</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>in dining room</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -111,7 +113,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=O_c-_wSIpzM')">Watching TV</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=O_c-_wSIpzM')">Watching TV</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>and counting down last few minutes to New Year day</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -119,7 +121,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9CMN7HK-384')">Nanu pops bottle</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9CMN7HK-384')">Nanu pops bottle</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>and pours drinks for everyone.....Dad says no for Arvind</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -127,7 +129,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Yk2Is5-O3P4')">Celebrating Maya's</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Yk2Is5-O3P4')">Celebrating Maya's</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>16th Birthday on Jan 1 2001</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -164,7 +166,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

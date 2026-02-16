@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Winter Episodes</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Mar-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=8SfIbpy0s98')">Snowing outside</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=8SfIbpy0s98')">Snowing outside</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Heavy snow....Bro shoveling in front yard....In background, TV reporting about the snow and Baby making noises</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Mar-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=pfy_rQwZCX4')">Snow on Baby</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=pfy_rQwZCX4')">Snow on Baby</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro comes in from snow...Mum feeding baby in stroller near front door....Bro splatters some snow on Baby...Mum says dont....Baby grins and squeals....Bro says Baby likes it</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Mar-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_8rx4GHxPR8')">Backyard view</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_8rx4GHxPR8')">Backyard view</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Heavy snow....backside view.....deck covered in snow</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Mar-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=vnlEYOrqapQ')">Baby & Dad - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=vnlEYOrqapQ')">Baby & Dad - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Dad on sofa cradling Baby in diaper....Baby & Dad chatting...baby straing at camera....Baby plays with Dad's mustache and stuffs hand in Dad's mouth...Dad munches on Baby's hand, says delicious, delectable and succulent...</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Mar-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=XaJ1gu5gPT8')">Baby & Dad - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=XaJ1gu5gPT8')">Baby & Dad - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Dad making sound on baby's tummy...Baby tickled and squealing...spots phone on armrest behind reaches out for it....turns back and plays with Dad's mouth and chin making Aaaa sound...sits up on Dad's lap and looks at Mum...Mum says Kalli Penne and Baby grins....Tries to grab Dad's fat thumb and munch on it</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Mar-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=NG4W0PJPmWE')">Bro in snow - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=NG4W0PJPmWE')">Bro in snow - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More heavy snow on deck....Bro plodding around on deck with snow shovel....Baby sounds in background....Bro sinks into snow and says "Uh oh Mom I forgot my mittens" and goes back in to get them</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -79,7 +81,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Mar-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=G3IjuXN4AwM')">Bro in snow - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=G3IjuXN4AwM')">Bro in snow - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro horsing around in snow on deck....Baby sounds in background</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -87,7 +89,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Mar-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ha7E2-yro_Q')">Bro in snow - 3</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ha7E2-yro_Q')">Bro in snow - 3</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Snow piled up on deck....Bro playing with snow....Baby noises in background.....Heavy snow scenes around house</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -124,7 +126,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

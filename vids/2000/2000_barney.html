@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Anu sings Barney</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=x_ney8U5Gow')">What they ate</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=x_ney8U5Gow')">What they ate</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu sings Barney song and some nonsense.....tells what Mum, Dad, Chetan and she ate during the thunderstorm</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=JKe_OMinrUU')">Hearty laugh</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=JKe_OMinrUU')">Hearty laugh</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum bottle-feed Anu....Chettan whining....Anu cyling legs, kicks Chettan....laughing heartily at Chetan's antics</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=hVZAuymk7DQ')">Scared</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=hVZAuymk7DQ')">Scared</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Chettan goshti....Anu finds lion....Chettan spins top....scares Anu with spider....Anu runs to Dad and complains....shows how lions, tigers roar....Chettan needles Anu again</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=vf7lpyetbsU')">Dont do it</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=vf7lpyetbsU')">Dont do it</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu tells Chettan sternly Dont do it....laughs and puts spider in mouth...throwing toy at each other.....</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=TKYICaPRPIQ')">Menon Baby</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=TKYICaPRPIQ')">Menon Baby</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Putting Menon Baby to sleep....Chetan playing with Etch-a-sketch.....Mum asks both to give a smile....Chetan goshti smil....Anu roars and acts Kurumbi</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=amLYmEcm9NE')">Thum here</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=amLYmEcm9NE')">Thum here</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu eating watermelon.....Mum says call Achan....Anu says Achan Thum here</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -79,7 +81,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=mqCBJVk2QPM')">Anuma</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=mqCBJVk2QPM')">Anuma</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum asks what she should call Anu....she says Anuma....Mum asks Anu to call Achan....Anu asks Shot (shout)? Mum says yes and An yells SHOOUT ....calls Chettan to eat watermelon bowl</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -87,7 +89,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=uuRbH8PHW1Q')">New pants</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=uuRbH8PHW1Q')">New pants</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu feeds Dad watermelon....Mum asks whose little girl you are....Dad asks whose cutie pie you are.....Anu tells Dad to buy new pants because it is wet....Dad says you wet it with the watermelon?!.....runs off to call Chetan</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -95,7 +97,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=hgHlpNN582w')">Staircase antics</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=hgHlpNN582w')">Staircase antics</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu at bottom ofsteps, calling Chetan to come down......doing antics on steps....tells Dad to watch her jump....Dad asks all done?....sats Lath time....goes to get more watermelon</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -103,7 +105,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=yHrzzcrmUNU')">Cereal</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=yHrzzcrmUNU')">Cereal</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu on floor eating cereal by herself....Chettan whines about not being recorded and shows face to camera....Dad warns that face will be recorded for posterity....Dad asks Anu what you are eating....Anu ROARS cereal ....says big thunderstorm....Mum says Pinne Podi</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -111,7 +113,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kiA-GfScfVU')">Nice smile</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kiA-GfScfVU')">Nice smile</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum tells Chettan dont use that whiny voice...Dad asks who are you copying.....Anu on dining table fiddling with dishes....Mum asks Chetan to give nice smile...gets a goshti face</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -119,7 +121,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID 2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=YPEKeJEJywQ')">What that girl did</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=YPEKeJEJywQ')">What that girl did</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu says Thum daddy's chair and squeezes in behind Dad and pushes... Chettan slurping cereal...Mum says not nice, Chettan says it is....Dad asks Anu what that little girl who came yesterday did....Anu has a lot to say about it....Mum says Okke indakkanallo, she never did any of those things....then Anu talks about other things that the girl did</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -156,7 +158,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

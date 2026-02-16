@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Wrapping up 2000</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5XCsTW-uYG8')">Anu trying to look</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5XCsTW-uYG8')">Anu trying to look</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>at herself through camera.....Mum reads Barney book to Anu.....asks if she brushed her teeth, she says no, wants to read book first....gives Mum an umma</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AgqcljLaST4')">Mum asks Anu</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AgqcljLaST4')">Mum asks Anu</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>where dad is taking her today....Anu says Santa is coming and  wants N'nMs and other gifts from him....says Chetan will get Pothamons and bananas from Santa....Anu reads Barney book</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KQ8-0ppJOHk')">Anu debating</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KQ8-0ppJOHk')">Anu debating</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>with Mum about how much of the peanut butter sandwich she ate......Are u gonna share odameel with me, dad?....tells Dad what to buy at Food Lion.....Dad asks Anu to tell a pink lion story</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=B8JGM3oLqao')">Anu wants to go</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=B8JGM3oLqao')">Anu wants to go</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>with Dad to pick Chettan up from school.....Mum washing milk bottle....Anu tells Dad Niloy left his cup here....wants to help Mum fill milk bottle....runs away from Mum with cup....</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ikmp78zPTrE')">Waiting for</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ikmp78zPTrE')">Waiting for</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>oatmeal to get ready.....Anu asks Dad to thayee her....wants to wake sleepyhead up....Mum spots dirt in Anu's ear....Mum writing stuff....Oatmeal is ready</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=uateCdl5j4A')">Mum asks Anu</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=uateCdl5j4A')">Mum asks Anu</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>to go with Dad to Prateek's party.....Anu says she dont vaaant oatameal......Mum says dont use that tone, copying Chetan......Mum suggests but Anu not interested in brushing teeth or taking bath......tells dad she wants a president from the toy store.....Chetan spotted lying on floor next to music player....Anu joins him</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -79,7 +81,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=n_pvQYfJeco')">Chettan goshti</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=n_pvQYfJeco')">Chettan goshti</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>lipsyncs to song with Any lying down next to him.....Anu takes Dad to show him the Christmas tree......gives her thoughts on how many Christmas trees everyone should get.....tells Mum she wants one more spoon</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -87,7 +89,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=y3udo5N3-a4')">Anu says she</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=y3udo5N3-a4')">Anu says she</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>saw  the balls go yound and yound at Planet Play......explains what she did to make them go yound and yound.....hides face with hands to escape being fed by Mum</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -95,7 +97,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-x-J1qFC1Mo')">Chetan making faces</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-x-J1qFC1Mo')">Chetan making faces</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>....Dad warns he is being recorded ....Goshti increases....Anu starts copying goshti....Mum says time for bath....Anu wants tub bath</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -103,7 +105,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=xK-U_UUu4Qg')">ACE Christmas Program - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=xK-U_UUu4Qg')">ACE Christmas Program - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Academy of Christian Academy school program</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -111,7 +113,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1TlOZwKMFAU')">ACE Christmas Program - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1TlOZwKMFAU')">ACE Christmas Program - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Academy of Christian Academy school program</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -148,7 +150,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

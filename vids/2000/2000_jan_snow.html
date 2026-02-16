@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Snow episodes</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=iY0zNWUSQ4s')">Heavy snow</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=iY0zNWUSQ4s')">Heavy snow</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>outside Herndon house....Arvind playing outside....Anu standing and watching through front door.....Mum calls out to Anu and she totters by and says Thetta pointing outside....Anu joins Arvind in the snow outside...Arvind balls up some snow and throws it in Mum's direction....Anu plodding around in pink gloves and purple hooded jacket...Arvind throws snow at Anu, Mum says Ai but Anu makes exci</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-0d04SVwsR4')">Anu plodding</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-0d04SVwsR4')">Anu plodding</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>around in the snow in front yard....and then on the backyard deck, all smiles and babbles....Arvind chuffed about being recorded....Anu says Eeeaa Emme Peppe (Translation: I want to get into toy car)....Mum asks Arvind to open it for Anu</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=OH30TbkLNng')">Backyard deck</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=OH30TbkLNng')">Backyard deck</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>...Arvind dumps some snow on the toy car seat....Mum says No, no, Kuuti Tanakkule but to no avail....Arvind opens the door and Anu says Aa Aa and geefully gets in.....Mum says Tattikalyu Mone but he dumps more snow on steering wheel and on top of car....Anu looks mighty pleased</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -84,7 +86,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

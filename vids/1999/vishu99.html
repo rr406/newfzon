@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Aluva Vishu Trip</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gILfKg6nGhU')">Vishu Eve - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gILfKg6nGhU')">Vishu Eve - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Muthachan & Mum lighting sparklers & flowerpots....Bro screaming away wildly....Ammu carrying quiet Baby</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-55HjLDdn8k')">Vishu Eve - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-55HjLDdn8k')">Vishu Eve - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Jagdish & Muthachan lighting...Bro invited, chickens out....Baby staring long at sparkler</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=aTbexzmdVJY')">Vishu Eve - 3</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=aTbexzmdVJY')">Vishu Eve - 3</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More fireworks lighting.....Muthachan carrying Baby</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=xq1WVMto2cg')">Vishu Eve - 4</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=xq1WVMto2cg')">Vishu Eve - 4</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Dad carries Baby....Ammu hiding, Mum trying to force her to come...Ammu lights sparkler</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=YbGn5SpwRRQ')">Vishu Eve - 5</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=YbGn5SpwRRQ')">Vishu Eve - 5</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>End of fireworks.....Bro antics....Mum yells at Bro</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=TUO-QHpy7us')">Sadya - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=TUO-QHpy7us')">Sadya - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Balan walking by.... Pranav on divan....Baby lying on ground and munching toy....Vishu feast on dining table....Eliyakutty teacher, Jagdhish, Suja, Muthachan, Mum eating....Closeup of food on Elas.....Balan serving Bro, piles on the rice, Bro says that's enough!</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -79,7 +81,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=DJgiAV5dW7Q')">Sadya - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=DJgiAV5dW7Q')">Sadya - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More eating....Ammu playing with Baby....Muthachan smiling for camera</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -87,7 +89,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zeTqemU2SCU')">Jagdish Leaving - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zeTqemU2SCU')">Jagdish Leaving - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Living Room....Baby in frilly dress...Bro crawling on floor.....Jagdish getting ready to leave....Muthashee peeks from behind curtain and quickly hides....Jagdish carries Baby who plays with his collar...</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -95,7 +97,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=IEq74--4glE')">Jagdish Leaving - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=IEq74--4glE')">Jagdish Leaving - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Ammu carries Baby, jagdish trying to carry Bro....Muthashee comes out from behind curtain...Baby whimpering</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -103,7 +105,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=2JR7n-urs-g')">On Ammu's Bed - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=2JR7n-urs-g')">On Ammu's Bed - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum, Bro and Baby playing on Ammu's bed</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -111,7 +113,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=JmElUIhFmXg')">On Ammu's Bed - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=JmElUIhFmXg')">On Ammu's Bed - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby bouncing on tummy, trying to reach out to camera....goes too close to edge of bed....Mum swishes her back....Bro "black panther" sneaks up from behind and pounces on Mum</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -119,7 +121,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=dmy0wp1QbUU')">On Ammu's Bed - 3</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=dmy0wp1QbUU')">On Ammu's Bed - 3</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More bro antics....Baby looking on amused</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -127,7 +129,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=XM3SGI3Ks7A')">Dining Room</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=XM3SGI3Ks7A')">Dining Room</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Pan around dining room...Mum,Ammu, Bro in Ammu's room....Lot of sounds from room, Mum giving baby a bath</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -135,7 +137,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=709WnzmMySc')">Bro Muthachan chat</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=709WnzmMySc')">Bro Muthachan chat</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Muthachan and Bro at dining table eating and chatting</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -143,7 +145,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=rxJD2FsNPw4')">Baby whimpering</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=rxJD2FsNPw4')">Baby whimpering</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More eating/chatting.....Baby bath done....Baby lying on mat, whimpering a bit</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -151,7 +153,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=65BQ8LVMURs')">Ammu cooking</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=65BQ8LVMURs')">Ammu cooking</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Ammu in kitchen...Baby bawling....Ammu putting Baby to sleep....Pan around kitchen</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -159,7 +161,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=qSV5IfDZW20')">Champakam</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=qSV5IfDZW20')">Champakam</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro says Joy and "that muthachan" took him to the river....Not muthachan, he is told......Bro says he went to Champakam (actually Manjapra)</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -167,7 +169,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=EslyTvB9CK8')">Bro chatting</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=EslyTvB9CK8')">Bro chatting</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro chatting to Muthachan and Dad  about trip to park and river</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -175,7 +177,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kscmqw4fwFE')">Ammu sing to Baby</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kscmqw4fwFE')">Ammu sing to Baby</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Ammu singing Va Vo to Baby on lap....Baby wide awake....Pan arounf living room</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -183,7 +185,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FQKoCiUDkWw')">Washing car with Joy</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FQKoCiUDkWw')">Washing car with Joy</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Joy getting hose to wash car...Bro goes to "help"....Ammu standing Baby up on wall in sitout area and baby watching outside scenery....camera closeup of outside surroundings</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -191,7 +193,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=SqXwMHFuha0')">Muthashee eating</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=SqXwMHFuha0')">Muthashee eating</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Muthashee eating at dining table, looks up, smiles and waves....Mum says don't take me....Joy & bro washing car</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -199,7 +201,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=pXhTlS1nUms')">Muthachan's office</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=pXhTlS1nUms')">Muthachan's office</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Going into Muthachan's office....Muthachan sitting at office table and reading.....back to Joy & Bro washing car</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -207,7 +209,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FMounz7vvBU')">Bro whining  - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FMounz7vvBU')">Bro whining  - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro hurt on leg and whimpering...Mum applying medicine...Baby in yellow bouncing on tummy...Ammu offers flute but Bro whines it doesnt work....Ammu rattles a toy and baby guffaws and flails excitedly.....Bro continues to whine and baby continues to flail away wildly</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -215,7 +217,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1jiwB2wLIKc')">Bro whining  - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1jiwB2wLIKc')">Bro whining  - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More wild flailing and squealing by Baby....Mum tells Bro it will heal by tomorrow but Bro disagrees and whines more...Ammu playing Oliche Kandu with Baby....Baby rolls over and gets hand stuck in dress</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -223,7 +225,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Zh9CRBweTRs')">Bro whining  - 3</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Zh9CRBweTRs')">Bro whining  - 3</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro whining even more when Baby pokes him....Baby stares at camera, grins and flails wildly....Bro wants Barbie bandaid....Baby gets stuck on pillow trying to roll over, starts bawling, Ammu to the rescue</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -231,7 +233,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Yxw2306I7gg')">Bro whining  - 4</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Yxw2306I7gg')">Bro whining  - 4</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby getting cranky, Ammu takes her away.....Mum warns Bro that bandage will hurt...Bro reluctantly agrees and whines on....Mum and Ammu talking about lunch...Bro leaves room whining....Mum heaves a sign of relief saying Oh Ente Mone....a few seconds of elevated room</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -239,7 +241,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9XC88CnngtY')">Elevated Room</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9XC88CnngtY')">Elevated Room</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum in elevated room watching TV intently....Bro chatting with Ammu downstairs.....Bro lying on sofa in dining room spouting nonsense,,,,,Baby on mat on floor whimpering and making sad sounds</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -247,7 +249,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=D6vO17mEoLM')">Baby happy sounds</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=D6vO17mEoLM')">Baby happy sounds</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby lying on mat spots camera above and gets excited....keeps staring, makes a variety of happy sounds and flails away...Bro in kitchen telling Ammu he loves the red curry....Bro walks by spouting nonsense and Baby not happy, starting to get cranky</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -255,7 +257,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=3_SsVq5gwZw')">Muthachan ironing</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=3_SsVq5gwZw')">Muthachan ironing</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Panning around Muthachan's room...Mum walks by...Bro and baby dozing peacefully on bed.....Muthachan ironing clothes....Panning around Jagdish's room</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -263,7 +265,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=qXz_ri_ISMA')">Truck, not Lorry</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=qXz_ri_ISMA')">Truck, not Lorry</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More panning around Muthachan's room....closeup of Chitta's nook.....pan around house surroundings....Bro says a "a truck" amd Mum says "lorry"...Bro says that's what they call it in India but he will call it a truck...or a lorry</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -271,7 +273,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=B3Blr_crAHE')">Baby talks to Muthachan</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=B3Blr_crAHE')">Baby talks to Muthachan</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Panning around dining room....Muthachan eating at dining table...Dad walks by....Bro lazing on bed....Baby on mat flailing away wildly and making sounds...turns around to Muthachan and says Aaaaah, Muthachan replies...Mum calls out to Baby and baby flails away before lying still and staring.....Ammu cooking in kitchen....Muthachan washing hands in outside sink, says something to Bro...Bro ignores still sprawled on bed</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -308,7 +310,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

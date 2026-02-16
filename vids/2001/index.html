@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>2001 - Explore 2001</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=UQDPuRqATdQ')">Suppise</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=UQDPuRqATdQ')">Suppise</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu tells Dad close your eyes...i have a suppise....a president for you.....Santa brought baby president.....whines a bit while Mum watches TV....shows Dad how she hops</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-SDH69FvJPA')">Shark puzzle</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-SDH69FvJPA')">Shark puzzle</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu doing acrobatics on Mum & Dad....Helping Dad with shark puzzle in kitchen...places a piece and says I did it and gives Kurumbi smile.....hear sounds from living room from Chettan....tells Dad that piece "noth do dare"...pushes piece in and says  "do dare"</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=BSK9NocFxDU')">Crab puzzle</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=BSK9NocFxDU')">Crab puzzle</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Dad says all done with shark puzzle and tries to weasel out....no luck, Anu wants to do the "Thab" puzzle.....Chettan whining to Dad about something.....Anu says "then u help me. I need a little help"....asks where's the "Saat" (shark), says I want to do that first....Dad says fininh the crab first.....Anu asks where's the "Snathe" (snake)....says I cant puth the piece....Dad getting annoyed, where does it go, think!</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=i6dJEz6udU4')">Pizza delivery</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=i6dJEz6udU4')">Pizza delivery</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Chettan whining about his puzzle....Anu gos to check out and says I finished mine....Pizza man comes to deliver pizza....Anu excited says Thummon daddy, Amma we bought some pizza....wants to eat now</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jeuEPMTaawk')">Riding Jaduar</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jeuEPMTaawk')">Riding Jaduar</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu riding on Chettan's back.....Anu says she is on a "Jaduar"....Mum asks Chettan to put on a Goshti show....Chettan shows finished Pokemon puzzle</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=S5imXk9xHUc')">Hands in Rice</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=S5imXk9xHUc')">Hands in Rice</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -79,7 +81,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kAwr3lkI8VU')">Playing on Deck</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kAwr3lkI8VU')">Playing on Deck</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -87,7 +89,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wFlIipJBQS4')">Spin around, Green Lion Story</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wFlIipJBQS4')">Spin around, Green Lion Story</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -95,7 +97,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=7oR2UTdJA5Q')">What's that sound, let's hear</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=7oR2UTdJA5Q')">What's that sound, let's hear</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -103,7 +105,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=4cwwBFq-VI8')">I am tallest, N and Ms</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=4cwwBFq-VI8')">I am tallest, N and Ms</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -111,7 +113,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=lrKZwLGkLas')">Quiz Time</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=lrKZwLGkLas')">Quiz Time</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -119,7 +121,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ohD-V_SlKUw')">Songs I like</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ohD-V_SlKUw')">Songs I like</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -127,7 +129,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=U2Wh3IjgedE')">Guess the song</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=U2Wh3IjgedE')">Guess the song</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -135,7 +137,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KySRoDTrKs0')">Ice Skating</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KySRoDTrKs0')">Ice Skating</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -143,7 +145,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PUXZACYyq2Y')">Sing Nursery Rhymes - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PUXZACYyq2Y')">Sing Nursery Rhymes - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -151,7 +153,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=CAgcWjyhvmI')">Sing Nursery Rhymes - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=CAgcWjyhvmI')">Sing Nursery Rhymes - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -159,7 +161,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=LQiuW1gl4Io')">Sad to leave US</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=LQiuW1gl4Io')">Sad to leave US</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -167,7 +169,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=sVPZSwM2TS0')">Take dirt out of toes</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=sVPZSwM2TS0')">Take dirt out of toes</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -175,7 +177,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=peiDrJ-dmoo')">Cappucino Cookie Math Quiz</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=peiDrJ-dmoo')">Cappucino Cookie Math Quiz</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -183,7 +185,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wMaVrBYsvL0')">Putzin around in kitchen</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wMaVrBYsvL0')">Putzin around in kitchen</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -191,7 +193,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZX1B23EEuUI')">Ouch Menon Baby Hurt Me</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZX1B23EEuUI')">Ouch Menon Baby Hurt Me</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -199,7 +201,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FgtlaCE99-A')">With Rohan in Living Room</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FgtlaCE99-A')">With Rohan in Living Room</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -207,7 +209,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AYpSVpctqG8')">Drying Hair - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AYpSVpctqG8')">Drying Hair - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -215,7 +217,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FS_URA7vNqI')">Drying Hair - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FS_URA7vNqI')">Drying Hair - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -223,7 +225,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=V0Mvr7GMQZo')">Draw Pokemon, Watch Dora</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=V0Mvr7GMQZo')">Draw Pokemon, Watch Dora</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -231,7 +233,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ll65b5SKCec')">Sleep please</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ll65b5SKCec')">Sleep please</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu walks on dining table....Dad trying to get her to sleep but fails!</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -239,7 +241,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=HVVw6lOhkRg')">HM yard with Rohan and Rachna</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=HVVw6lOhkRg')">HM yard with Rohan and Rachna</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -247,7 +249,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=19-rFSASdh8')">HM Yard Anu</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=19-rFSASdh8')">HM Yard Anu</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -255,7 +257,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=SvDVb2RWN-8')">HM Yard Arvind with Star</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=SvDVb2RWN-8')">HM Yard Arvind with Star</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -263,7 +265,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1-IoXtV3c94')">Roweena, Priya and co - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1-IoXtV3c94')">Roweena, Priya and co - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -271,9 +273,97 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2001</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=nc-mEPKG0Y0')">Roweena, Priya and co - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=nc-mEPKG0Y0')">Roweena, Priya and co - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>ipsum lorem</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=tustEe4CmLk')">Captain Planet He da Heeyo</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>Counting Arvind's missing teest....Dad asks Anu to sing....Anu says can't see herself in the camera and throws tantrum....Arvind explains to Anu why it's so and she seems reassured and tries to sing....Arvind shows Pokedex....Anu blissfully digging gold....sings Itsy Bitsy Spider (still digging gold)....Goes to kitchen to give gold to Mum....Anu sitting on edge of bed, wide smile....asks if she will come on the Vee Shee Aar....Dad trying force Anu to sing Captain Planet</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=yotwirJrsN8')">Opposites</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>Anu asks Dad questions about who is in the VCR....wears Mum's dupatta and says I'm a shmol Anututti... Any saying opposite words</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=IucJEc6rVBE')">Onam Pookalam</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>Mum, Arvind, Anu making Pookalam in A204</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=6ADlB5yNDU8')">DPS Kerala Day Program - 1</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>Into by Arvind...kids performances</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5qVfmPZZ97s')">DPS Kerala Day Program - 2</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>More performances...Closing comments by Arvind</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>Sep-2001</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=--QjJzHvYBo')">Anu First Day of School + Anu's 3rd Birthday</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>Anu fressed up in green frock and getting reasy to go to Twinklers....Mum coacing her on what to say to the teacher...Arvind whining for Mum to put on tie....Happy Birhday to Anu while getting ready to go to school</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>Sep-2001</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=G3MYgwFpnH8')">Anu 3rd Birthday Celebration</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>at A204 with Valyamman, Vasu, Shreemati, Nikhil and a few other kids</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>Sep-2001</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=aVNY_ilMje0')">SIng a song of sixpence</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>After guest leave, Anu licking cake...sings Sing a song of sixpence and Pussycat....Arvind drawing on whiteboard.....Anu solves math problems and looks thrilled</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=o88Sc-HYCSY')">To market to market</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>Dad teaching Anu to read To Market to market , Teddy Bear and other nursery rhymes....Arvind reading book and making squeaky noises....Arvind shows Pokemon book</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jbQOmj7kkIE')">I saw thunder</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>Anu singing somg learnt at school (I saw thunder)....Dad teaches Anu to read Johny Johny Yes Papa....Arvind helping out....more nursery rhymes...Arvind still engrossed in Pokemon book and making squeaky sounds....Anu gives Chettan a hug but Chettan so engrossed he did not realize it.....Anu dancing</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zvW2Jx7CZFs')">Copyright ????</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>Anu & Arvind dancing to Hindi Songs</div>
+<span class='read-more' onclick='toggleDesc(this)'>Read more</span>
+</div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='date-stamp'>Oct-2001</div>
+<div class='link-container'><a class='link-text' href='2001_arv_bday.html'>Arvind's 7th Birthday</a></div>
+<div class='desc-wrapper'>
+<div class='desc'>Combined Arvind's 7th bIrthday & Anu's 3rd birthday celebrations at A204 with other kids....Roweena & mom (?), Vasu present</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
 </div>
 </div></div>
@@ -308,7 +398,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

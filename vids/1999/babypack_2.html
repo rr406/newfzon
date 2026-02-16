@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Baby Movie Pack - 2</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=aLnYQaoFlPM')">Whimpering</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=aLnYQaoFlPM')">Whimpering</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby starting to whimper....good view of chubby hands and legs....Mum plans to give Ethapazham</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=oHF30mUuyJo')">Bro rattling</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=oHF30mUuyJo')">Bro rattling</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro brings rattle toy and rattles away for Baby.....Baby is mesmerized.....Bro ask mum to garland him with rattel toy</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Xq6p7KI4f6o')">Cycling & Smiling</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Xq6p7KI4f6o')">Cycling & Smiling</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby in pink bow dress lying on mat cycling vigorously making raspberry sounds....Mum calls out, baby looks....Mum asks her to talk, she looks, smiles widely makes a Kaaah sound</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kxLTL699iRA')">Mum chatting</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kxLTL699iRA')">Mum chatting</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum chatting and Baby smiling....Mum helps baby roll over on tummy...Hand is stuck under tummy....Baby struggling mighti;y to get it out....Mum helps finally</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wT3ZSiWancM')">Looking at Mum</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wT3ZSiWancM')">Looking at Mum</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby in pink on tummy....turns to look when Mum says "Ammene Noke"...listend to musical toy.....Mum feeding baby in baby bouncer, Bro says she doesnt like it...Bro talking nonsense and gobbling food....Mum asks Bro to hold teddy bear but he says I have to eat</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kyx1rGdW9k0')">Feeding</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=kyx1rGdW9k0')">Feeding</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Feeding continues....Mum says Brooh and baby smiles....Baby fascinated by musical bear toy.....Mum says she Baby turned it on by herself...Bro asks how she managed to do it....Mum says because she is clever...Bro says no</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -79,7 +81,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=sDcyDvFQfRE')">Gobbling</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=sDcyDvFQfRE')">Gobbling</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum says "Nannayitte Kazhikanindallo, gobbling it up".....Baby fast asleep swinging on electric swing</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -116,7 +118,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

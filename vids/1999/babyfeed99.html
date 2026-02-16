@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Feeding Saga</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5askcuODdFo')">Food in and out - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5askcuODdFo')">Food in and out - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum feeding baby in bouncer...food going in and out of mouth...Mum asks bro to get musical toy but he can't find it....Mum gets it herself and shows to baby...baby is transfixed</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=w_Kln6K39kY')">Food in and out - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=w_Kln6K39kY')">Food in and out - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum continuing to feed baby....food going in and out of mouth....Bro yelping and horsing around</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=tPFvejSSsYM')">Bro nuisance</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=tPFvejSSsYM')">Bro nuisance</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More feeding....Bro being a nuisance</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Z5XWQm8jb-A')">Feeding struggle</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Z5XWQm8jb-A')">Feeding struggle</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum struggling to feed baby.....Bro brings Tigger toy to show....Baby's chubby feet flailing around</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=bFB2xZKYt80')">Food in and out - 3</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=bFB2xZKYt80')">Food in and out - 3</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Food continues going in and out of baby's mouth.....Baby transfixed by Tigger.....Bro saying nonsense</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Jan-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=D607e-Vd3ss')">First solid food almost done</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=D607e-Vd3ss')">First solid food almost done</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Meal almost over, first time without sugar....Baby gives wide smile.....Bro talking nonsense as usual....Mum says baby must have eaten 1 or max 2 teaspoons while bro gobbled up his first solid food</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -108,7 +110,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

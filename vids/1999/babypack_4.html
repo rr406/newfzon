@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Baby Movie Pack - 4</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=q9oOAx5NHVk')">Yawn and sneeze</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=q9oOAx5NHVk')">Yawn and sneeze</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby sitting quietly in green stroller in kitchen...staring at camera...yawns, looks around, sneezes</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=NPxMTTMRaCQ')">Baby Mum chatting - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=NPxMTTMRaCQ')">Baby Mum chatting - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Closeup of baby face, baby looks puzzled....Mum combing baby's hair, baby squealing away....Mum and baby chatting</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0iMAoNO6DY0')">Baby Mum chatting - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0iMAoNO6DY0')">Baby Mum chatting - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro saying nonsense....Mum combing and baby chattering away....Bro reading to himself in background</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=rlpZyf7HJaE')">Baby Mum chatting - 3</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=rlpZyf7HJaE')">Baby Mum chatting - 3</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>More baby-mum conversation....baby laughing</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5bHmAOS_NmY')">On tummy</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5bHmAOS_NmY')">On tummy</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby on tummy, starts whimpering ....then freezes and stares puzzled at camera at ground lvel....Bro doing/saying nonsense</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=8D2UbzPJOmA')">Baby Bro chatting</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=8D2UbzPJOmA')">Baby Bro chatting</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro-baby animated conversation</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -79,7 +81,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=WrdPTxkkz7k')">Electric swing</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=WrdPTxkkz7k')">Electric swing</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby in swing in living room...Bro standing on table doing nonsense...Hindi song in background....Mum chatting with Baby...Bro telling himself a story</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -87,7 +89,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=n0E3ydkw5wE')">Random stuff</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=n0E3ydkw5wE')">Random stuff</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum takes baby out of swing and carries her....Bro asks Daddy to pay attention to him.....Baby on tummy.....Mum laughing for some reason</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -95,7 +97,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZsUmkcHXSxs')">Flailing</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZsUmkcHXSxs')">Flailing</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Kucha na Kaho in background...Baby flailing away on tummy...Dad watching TV, Bro lying on saofa...Mum says Dad is drinking beer....Mum talking to Baby....Bro saying something to Dad</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -103,7 +105,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Feb-1999</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZGOZv0Qyzww')">Yowling</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZGOZv0Qyzww')">Yowling</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Short one - baby on tummy yowling away</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -140,7 +142,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

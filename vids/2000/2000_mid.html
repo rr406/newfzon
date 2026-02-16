@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Ammu & Muthachan</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>SPR-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5mSFbyfu7n4')">Maam Uppumav</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5mSFbyfu7n4')">Maam Uppumav</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum teaching Arvind to cut carrots.....Anu looking closely......Anu gets into high chair and says says Uppumac is "Maam"....Arvind says he is eating "Shuggurr"</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>SPR-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Rup7Uw7PJ4A')">Uppumave is Muthachan</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Rup7Uw7PJ4A')">Uppumave is Muthachan</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Now Anu finds it "Hotte".....Arvind reading book....Anu calls Uppumave Muthachan...asks Dad to server her.....says it's Hotte....Dad says blow on it...spit comes out instead</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>SPR-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=evSdhb1neA8')">Playing in yard</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=evSdhb1neA8')">Playing in yard</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Arvind and Anu playing in front</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=DEgxLAtsS-4')">Rohan, Arvind & Anu  - 1</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=DEgxLAtsS-4')">Rohan, Arvind & Anu  - 1</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Playing in living room</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=X1sVXrzH7HE')">Rohan, Arvind & Anu  - 2</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=X1sVXrzH7HE')">Rohan, Arvind & Anu  - 2</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Playing in living room</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FmYeXLTdDQY')">Big big water</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FmYeXLTdDQY')">Big big water</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu & Arvind sing Big Big Water....Arvind showing dinosaur book.....Anu answers Mum's questions....says Anu is a man.....Arvind whines let me see</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -79,7 +81,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=u47Okl-RCG8')">Mini tantrum</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=u47Okl-RCG8')">Mini tantrum</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Bro pesters Anu....Anu starts bawling and goes to dad to be picked up......Dad asks and Chetan says he did not do anything..Anu pleased now and crawls up over dad's shoulders</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -87,7 +89,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ty5tHOXr53Y')">Wake dad up</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ty5tHOXr53Y')">Wake dad up</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Singing big big water again....Anu checking if Ammumma & Muthachan have come....Hiding behind curtain.....Anu wakes up dad</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -95,7 +97,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Wl6YumLb6IE')">Nursery Songs</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Wl6YumLb6IE')">Nursery Songs</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu in kitchen listening intently to nursery songs</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -103,7 +105,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PK-E2O6NXTg')">Helper Arvind</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PK-E2O6NXTg')">Helper Arvind</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Arvind helping Anu on and off dining table, Anu happy.....Mum asks Anu what Chetan just did and she says AMMA BLAVVABAVAA....Chetan tells Mum that means he helped her.....Anu continues BATABABATABATA.....Mum rewards Arvind plus points but he wants 1000</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -111,7 +113,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0mQfSwqVvUk')">Muthachan feeds Anu</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0mQfSwqVvUk')">Muthachan feeds Anu</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Muthachan feedin Anu....Ammu watching.....Mum asks Anu who's feeding her and she replies...Arvind asking Anu to say some words.....Anu big grin....Arvind tells Mum an interesting fact about sloths....Mum's impressed, asks where he learnt about it</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -119,7 +121,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>XXX-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=L_u4ltGTFes')">Anu aces word test!</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=L_u4ltGTFes')">Anu aces word test!</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Arvind asks Anu to say more words - flower, fire engine, racecar, hat, floor, pillow, cushion, Karthink, piano, jacket, house, trashcan, mirror etc etc....Mum asks to wake Achan up</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -127,7 +129,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1CHjew1dH8M')">Thaayi me</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1CHjew1dH8M')">Thaayi me</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu whines Daddy Thaayi me....Chettan talks about reading lessons and the ACE program</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -135,7 +137,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>MID-2000</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Pl09sdT2WGk')">Thum up</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Pl09sdT2WGk')">Thum up</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Anu asks Muthachan to "Thum up".....All getting ready to go for ACE program</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -172,7 +174,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {

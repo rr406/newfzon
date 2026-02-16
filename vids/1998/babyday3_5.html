@@ -15,12 +15,14 @@
             display: flex; align-items: flex-start; gap: 15px; }
     .card:hover { transform: translateY(-2px); border-color: var(--primary); }
     .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
-    .content-right { flex: 1; min-width: 0; } /* min-width prevents flex items from overflowing */
+    .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
-    .link-text { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.125rem; 
-                  display: block; margin-bottom: 4px; cursor: pointer; padding-right: 35px; }
     
-    /* Truncation Logic */
+    /* Adjusted to allow partial link styling */
+    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
+    .link-text { color: var(--primary); text-decoration: none; cursor: pointer; }
+    .link-text:hover { text-decoration: underline; }
+    
     .desc-wrapper { position: relative; }
     .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
@@ -31,7 +33,7 @@
 <div class='container'><header><h1>Days 3 - 5</h1></header><div class='card-grid'>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1Auxl-YMbac')">Looking around</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1Auxl-YMbac')">Looking around</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Music in background....Baby on mom's lap wide awake.....Turns head when Dad says Hi.....Mom trying to teach fine motor skills....Dad makes clucking sound and tries to get baby's attention but no luck</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -39,7 +41,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zQKMirTvMTI')">Dressing Baby</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zQKMirTvMTI')">Dressing Baby</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Donning pink dress.....Chitta helping......Mum tries to turn baby over...baby starts bawling....stops when Dad says Hi baby.... listening to Dad's monologue about brother....had enough bawls again</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -47,7 +49,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=bdu9zSNeyxk')">Chitta with Baby</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=bdu9zSNeyxk')">Chitta with Baby</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby on Chitta's lap....Brother in all red milling around...Chitta amused when baby holds balloon....Mighty big yawn and sneeze....Chitta konjikkaling baby</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -55,7 +57,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-1998</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=3TtCdcbFRqQ')">Baby on Bro's lap</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=3TtCdcbFRqQ')">Baby on Bro's lap</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Brother's primal scream startles baby........Baby on coy brother's lap</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -63,7 +65,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=IRaveSlCNt8')">Fast asleep</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=IRaveSlCNt8')">Fast asleep</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby bundled up in white...fast asleep....chubby hands on ears....Mum says "don't take me, take her"</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -71,7 +73,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PQ8SpOtvgZo')">Balloons and Bouqets</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=PQ8SpOtvgZo')">Balloons and Bouqets</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Filler....It's a girl balloon...flower bouquet</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -79,7 +81,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=rwx4VttwRZ0')">Hiccups</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=rwx4VttwRZ0')">Hiccups</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby lying on bed...making loud hiccup sounds...Mum bundling baby up...Chitta helping....Mum asks dad about class...Dad says Joel(?) was there</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -87,7 +89,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ed81_KIpEJU')">Dressing Baby</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ed81_KIpEJU')">Dressing Baby</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Mum putting on pink dress....baby slightly annoyed</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -95,7 +97,7 @@
 </div></div>
 <div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-1998</div>
-<a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=438UE6nTZXQ')">Hungry</a>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=438UE6nTZXQ')">Hungry</a></div>
 <div class='desc-wrapper'>
 <div class='desc'>Baby is hungry....brother gives baby a peck</div>
 <span class='read-more' onclick='toggleDesc(this)'>Read more</span>
@@ -132,7 +134,6 @@
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
 
-    // Check if description is long enough to need "Read more"
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
             if (d.scrollHeight > d.clientHeight) {
