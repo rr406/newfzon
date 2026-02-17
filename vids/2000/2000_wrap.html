@@ -3,136 +3,142 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-    :root { --primary: #2563eb; --text: #1f2937; --bg: #f3f4f6; --card: #ffffff; --border: #e5e7eb; }
+    :root { 
+        --primary: #2563eb; 
+        --primary-dark: #1d4ed8;
+        --text: #1f2937; 
+        --bg: #f8fafc; 
+        --card: #ffffff; 
+        --border: #e2e8f0; 
+    }
     body { font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
            line-height: 1.5; color: var(--text); background: var(--bg); margin: 0; padding: 20px; }
     .container { max-width: 900px; margin: 0 auto; }
-    header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
-    h1 { font-size: 2rem; color: #111827; margin: 0; }
-    .card-grid { display: grid; gap: 1rem; }
+    
+    /* Header & Title Styling */
+    header { margin-bottom: 1.5rem; padding-bottom: 1rem; }
+    h1 { 
+        font-size: 2.25rem; 
+        color: #0f172a; 
+        margin: 0; 
+        font-weight: 800; 
+        letter-spacing: -0.025em;
+    }
+    
+    /* Welcome Banner Styling (from [[Banner]]) */
+    .welcome-banner { 
+        margin: 0 0 2rem 0; 
+        padding: 1.25rem 1.5rem; 
+        background: var(--card); 
+        border-left: 4px solid var(--primary); 
+        border-radius: 8px; 
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .welcome-text { 
+        font-size: 1.1rem; 
+        color: #475569; 
+        margin: 0; 
+        font-weight: 500; 
+        line-height: 1.6;
+    }
+
+    .card-grid { display: grid; gap: 1.25rem; }
     
     .card { 
         background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-        padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; transition: transform 0.1s; 
-        display: flex; align-items: flex-start; gap: 15px; 
-        cursor: pointer; /* Makes the whole card feel clickable */
+        padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative; transition: all 0.2s; 
+        display: flex; align-items: flex-start; gap: 15px; cursor: pointer;
     }
-    .card:hover { transform: translateY(-2px); border-color: var(--primary); background-color: #f9fafb; }
-    
-    .icon-main { color: #9ca3af; font-size: 24px; margin-top: 15px; }
+    .card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); background-color: #fff; }
+    .icon-main { color: #64748b; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
-    .date-stamp { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
+    .date-stamp { font-size: 0.75rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em; }
+    .link-container { display: block; margin-bottom: 6px; padding-right: 35px; font-weight: 700; font-size: 1.2rem; color: #1e293b; }
     
-    .link-container { display: block; margin-bottom: 4px; padding-right: 35px; font-weight: 700; font-size: 1.125rem; color: var(--text); }
-    
-    .link-text { 
-        color: var(--primary); 
-        text-decoration: underline; /* Always underlined as requested */
-        cursor: pointer; 
-    }
-    .link-text:hover { color: #1d4ed8; text-decoration: none; }
+    .link-text { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+    .link-text:hover { color: var(--primary-dark); text-decoration: none; }
     
     .desc-wrapper { position: relative; }
-    .desc { color: #6b7280; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    .desc { color: #64748b; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
-    .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 4px; }
+    .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 6px; }
     .desc:not(.expanded).is-truncated + .read-more { display: inline-block; }
 </style>
 <title>Wrapping up 2000</title></head><body>
-<div class='container'><header><h1>Wrapping up 2000</h1></header><div class='card-grid'>
+<div class='container'><header><h1>Wrapping up 2000</h1></header>
+
+<div class='card-grid'>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=5XCsTW-uYG8')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5XCsTW-uYG8'); event.stopPropagation();">Anu trying to look</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>at herself through camera.....Mum reads Barney book to Anu.....asks if she brushed her teeth, she says no, wants to read book first....gives Mum an umma</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>at herself through camera.....Mum reads Barney book to Anu.....asks if she brushed her teeth, she says no, wants to read book first....gives Mum an umma</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=AgqcljLaST4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=AgqcljLaST4'); event.stopPropagation();">Mum asks Anu</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>where dad is taking her today....Anu says Santa is coming and  wants N'nMs and other gifts from him....says Chetan will get Pothamons and bananas from Santa....Anu reads Barney book</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>where dad is taking her today....Anu says Santa is coming and  wants N'nMs and other gifts from him....says Chetan will get Pothamons and bananas from Santa....Anu reads Barney book</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=KQ8-0ppJOHk')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KQ8-0ppJOHk'); event.stopPropagation();">Anu debating</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>with Mum about how much of the peanut butter sandwich she ate......Are u gonna share odameel with me, dad?....tells Dad what to buy at Food Lion.....Dad asks Anu to tell a pink lion story</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>with Mum about how much of the peanut butter sandwich she ate......Are u gonna share odameel with me, dad?....tells Dad what to buy at Food Lion.....Dad asks Anu to tell a pink lion story</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=B8JGM3oLqao')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=B8JGM3oLqao'); event.stopPropagation();">Anu wants to go</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>with Dad to pick Chettan up from school.....Mum washing milk bottle....Anu tells Dad Niloy left his cup here....wants to help Mum fill milk bottle....runs away from Mum with cup....</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>with Dad to pick Chettan up from school.....Mum washing milk bottle....Anu tells Dad Niloy left his cup here....wants to help Mum fill milk bottle....runs away from Mum with cup....</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=Ikmp78zPTrE')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ikmp78zPTrE'); event.stopPropagation();">Waiting for</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>oatmeal to get ready.....Anu asks Dad to thayee her....wants to wake sleepyhead up....Mum spots dirt in Anu's ear....Mum writing stuff....Oatmeal is ready</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>oatmeal to get ready.....Anu asks Dad to thayee her....wants to wake sleepyhead up....Mum spots dirt in Anu's ear....Mum writing stuff....Oatmeal is ready</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=uateCdl5j4A')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=uateCdl5j4A'); event.stopPropagation();">Mum asks Anu</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>to go with Dad to Prateek's party.....Anu says she dont vaaant oatameal......Mum says dont use that tone, copying Chetan......Mum suggests but Anu not interested in brushing teeth or taking bath......tells dad she wants a president from the toy store.....Chetan spotted lying on floor next to music player....Anu joins him</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>to go with Dad to Prateek's party.....Anu says she dont vaaant oatameal......Mum says dont use that tone, copying Chetan......Mum suggests but Anu not interested in brushing teeth or taking bath......tells dad she wants a president from the toy store.....Chetan spotted lying on floor next to music player....Anu joins him</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=n_pvQYfJeco')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=n_pvQYfJeco'); event.stopPropagation();">Chettan goshti</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>lipsyncs to song with Any lying down next to him.....Anu takes Dad to show him the Christmas tree......gives her thoughts on how many Christmas trees everyone should get.....tells Mum she wants one more spoon</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>lipsyncs to song with Any lying down next to him.....Anu takes Dad to show him the Christmas tree......gives her thoughts on how many Christmas trees everyone should get.....tells Mum she wants one more spoon</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=y3udo5N3-a4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=y3udo5N3-a4'); event.stopPropagation();">Anu says she</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>saw  the balls go yound and yound at Planet Play......explains what she did to make them go yound and yound.....hides face with hands to escape being fed by Mum</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>saw  the balls go yound and yound at Planet Play......explains what she did to make them go yound and yound.....hides face with hands to escape being fed by Mum</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=-x-J1qFC1Mo')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-x-J1qFC1Mo'); event.stopPropagation();">Chetan making faces</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>....Dad warns he is being recorded ....Goshti increases....Anu starts copying goshti....Mum says time for bath....Anu wants tub bath</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>....Dad warns he is being recorded ....Goshti increases....Anu starts copying goshti....Mum says time for bath....Anu wants tub bath</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=xK-U_UUu4Qg')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=xK-U_UUu4Qg'); event.stopPropagation();">ACE Christmas Program - 1</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>Academy of Christian Academy school program</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>Academy of Christian Academy school program</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 <div class='card' onclick="playVideo('https://www.youtube.com/watch?v=1TlOZwKMFAU')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Dec-2000</div>
 <div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=1TlOZwKMFAU'); event.stopPropagation();">ACE Christmas Program - 2</a></div>
-<div class='desc-wrapper'>
-<div class='desc'>Academy of Christian Academy school program</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span>
-</div>
+<div class='desc-wrapper'><div class='desc'>Academy of Christian Academy school program</div>
+<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
 </div></div>
 </div></div>
-<div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center;">
+<div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(15, 23, 42, 0.9); align-items:center; justify-content:center; backdrop-filter: blur(4px);">
     <div style="position:relative; width:95%; max-width:1000px; aspect-ratio:16/9;">
-        <span onclick="closeVideo()" style="position:absolute; top:-45px; right:0; color:white; font-size:35px; cursor:pointer;">&times;</span>
-        <iframe id="videoPlayer" src="" style="width:100%; height:100%; border-radius:8px; border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <span onclick="closeVideo()" style="position:absolute; top:-45px; right:0; color:white; font-size:35px; cursor:pointer; font-family: sans-serif;">&times;</span>
+        <iframe id="videoPlayer" src="" style="width:100%; height:100%; border-radius:12px; border:none; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 </div>
 <script>
@@ -152,18 +158,14 @@
         document.getElementById('videoPlayer').src = "";
         document.body.style.overflow = 'auto';
     }
-
     function toggleDesc(el) {
         const desc = el.previousElementSibling;
         desc.classList.toggle('expanded');
         el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
     }
-
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.desc').forEach(d => {
-            if (d.scrollHeight > d.clientHeight) {
-                d.classList.add('is-truncated');
-            }
+            if (d.scrollHeight > d.clientHeight) { d.classList.add('is-truncated'); }
         });
     });
 </script>
