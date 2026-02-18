@@ -5,8 +5,9 @@
 <style>
     :root { 
         --primary: #2563eb; 
-        --primary-dark: #1d4ed8;
+        --primary-hover: #1d4ed8;
         --text: #1f2937; 
+        --text-muted: #64748b;
         --bg: #f8fafc; 
         --card: #ffffff; 
         --border: #e2e8f0; 
@@ -31,26 +32,35 @@
         background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
         padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
         display: flex; align-items: flex-start; gap: 15px; 
-        cursor: default; /* Arrow cursor for the card body */
+        cursor: default;
     }
     
-    .icon-main { color: #64748b; font-size: 24px; margin-top: 15px; }
+    .icon-main { color: var(--text-muted); font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
     .date-stamp { font-size: 0.75rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
     .link-container { display: block; margin-bottom: 6px; padding-right: 35px; font-weight: 700; font-size: 1.2rem; }
     
+    /* LINK HOVER EFFECT */
     .link-text { 
         color: var(--primary); 
         text-decoration: underline; 
         text-underline-offset: 4px; 
-        cursor: pointer; /* Hand icon ONLY here */
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: inline-block;
     }
-    .link-text:hover { color: var(--primary-dark); text-decoration: none; }
+    .link-text:hover { 
+        color: var(--primary-hover); 
+        text-decoration: none;
+        text-shadow: 0 0 1px rgba(37, 99, 235, 0.2);
+        transform: scale(1.01);
+    }
     
     .desc-wrapper { position: relative; }
-    .desc { color: #64748b; font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    .desc { color: var(--text-muted); font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
     .desc.expanded { -webkit-line-clamp: unset; display: block; }
     .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 6px; }
+    .read-more:hover { text-decoration: underline; }
     .desc:not(.expanded).is-truncated + .read-more { display: inline-block; }
 </style>
 <title>Day 2</title></head><body>
