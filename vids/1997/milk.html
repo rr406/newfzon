@@ -40,18 +40,19 @@
     .date-stamp { font-size: 0.75rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
     .link-container { display: block; margin-bottom: 6px; padding-right: 35px; font-weight: 700; font-size: 1.2rem; }
     
-    /* LINK HOVER EFFECT */
+    /* PERSISTENT UNDERLINE HOVER */
     .link-text { 
         color: var(--primary); 
         text-decoration: underline; 
         text-underline-offset: 4px; 
+        text-decoration-thickness: 2px; /* Makes the underline more prominent */
         cursor: pointer;
         transition: all 0.2s ease;
         display: inline-block;
     }
     .link-text:hover { 
         color: var(--primary-hover); 
-        text-decoration: none;
+        text-decoration: underline; /* Remains visible */
         text-shadow: 0 0 1px rgba(37, 99, 235, 0.2);
         transform: scale(1.01);
     }
