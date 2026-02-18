@@ -16,44 +16,35 @@
     .container { max-width: 900px; margin: 0 auto; }
     
     header { margin-bottom: 1.5rem; padding-bottom: 1rem; }
-    h1 { 
-        font-size: 2.25rem; 
-        color: #0f172a; 
-        margin: 0; 
-        font-weight: 800; 
-        letter-spacing: -0.025em;
-    }
+    h1 { font-size: 2.25rem; color: #0f172a; margin: 0; font-weight: 800; letter-spacing: -0.025em; }
     
     .welcome-banner { 
-        margin: 0 0 2rem 0; 
-        padding: 1.25rem 1.5rem; 
-        background: var(--card); 
-        border-left: 4px solid var(--primary); 
-        border-radius: 8px; 
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        margin: 0 0 2rem 0; padding: 1.25rem 1.5rem; background: var(--card); 
+        border-left: 4px solid var(--primary); border-radius: 8px; 
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
-    .welcome-text { 
-        font-size: 1.1rem; 
-        color: #475569; 
-        margin: 0; 
-        font-weight: 500; 
-        line-height: 1.6;
-    }
+    .welcome-text { font-size: 1.1rem; color: #475569; margin: 0; font-weight: 500; }
 
     .card-grid { display: grid; gap: 1.25rem; }
     
     .card { 
         background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-        padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative; transition: all 0.2s; 
-        display: flex; align-items: flex-start; gap: 15px; cursor: pointer;
+        padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: default; /* Arrow cursor for the card body */
     }
-    .card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); background-color: #fff; }
+    
     .icon-main { color: #64748b; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
-    .date-stamp { font-size: 0.75rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em; }
-    .link-container { display: block; margin-bottom: 6px; padding-right: 35px; font-weight: 700; font-size: 1.2rem; color: #1e293b; }
+    .date-stamp { font-size: 0.75rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+    .link-container { display: block; margin-bottom: 6px; padding-right: 35px; font-weight: 700; font-size: 1.2rem; }
     
-    .link-text { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; 
+        text-underline-offset: 4px; 
+        cursor: pointer; /* Hand icon ONLY here */
+    }
     .link-text:hover { color: var(--primary-dark); text-decoration: none; }
     
     .desc-wrapper { position: relative; }
@@ -66,101 +57,101 @@
 <div class='container'><header><h1>Birthday and other episodes</h1></header>
 
 <div class='card-grid'>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=GU1wse-ZBEA')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=GU1wse-ZBEA'); event.stopPropagation();">Getting ready</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=GU1wse-ZBEA');">Getting ready</a></div>
 <div class='desc-wrapper'><div class='desc'>for Anu's 2nd Birthday....says she is going to be Too Yeath Old...Chettan with birthday cap and ballooon</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=rkDBwskzHdA')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=rkDBwskzHdA'); event.stopPropagation();">Anu's 2nd birthday</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=rkDBwskzHdA');">Anu's 2nd birthday</a></div>
 <div class='desc-wrapper'><div class='desc'>celebration and cake cutting with other families and kids....Anu clinging to Dad looking dazed</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=ngl-IqqjQ-A')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ngl-IqqjQ-A'); event.stopPropagation();">Mum in kitchen</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ngl-IqqjQ-A');">Mum in kitchen</a></div>
 <div class='desc-wrapper'><div class='desc'>....Anu bawling</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=_U8_Qbmn_as')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_U8_Qbmn_as'); event.stopPropagation();">Anu helping Mum</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_U8_Qbmn_as');">Anu helping Mum</a></div>
 <div class='desc-wrapper'><div class='desc'>in kitchen .....pouring yogurtand water  into bowl......Chetan horsing around in living room with birthday confetti</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=loAD9r-kV40')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=loAD9r-kV40'); event.stopPropagation();">Anu counts fingers</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=loAD9r-kV40');">Anu counts fingers</a></div>
 <div class='desc-wrapper'><div class='desc'>on Dad'd hands</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=zmOsyNJI8bs')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Sep-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zmOsyNJI8bs'); event.stopPropagation();">More finger</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zmOsyNJI8bs');">More finger</a></div>
 <div class='desc-wrapper'><div class='desc'>counting lessons....Chetan in full goshti mode</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=z8faIh8B9uI')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=z8faIh8B9uI'); event.stopPropagation();">Surprise birthday</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=z8faIh8B9uI');">Surprise birthday</a></div>
 <div class='desc-wrapper'><div class='desc'>cake for Chettan's 6th Birthday.....Singing Happy birthday....Anu looks dazed and confused.....CHetan on counter top enjoying cake....says i am on counter top becuase Anu keeps asking if I like it and that's bothering me...</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=68Znpzf89L8')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=68Znpzf89L8'); event.stopPropagation();">Anu refuses to</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=68Znpzf89L8');">Anu refuses to</a></div>
 <div class='desc-wrapper'><div class='desc'>share cake with Chetan...takes his birthday card....Chettan steals some cake from Anu.....Anu starts screaming and whining.....Mum asks Anu to tell Chettan he's a baby....says Amma baby</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=MJUggSg5fik')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=MJUggSg5fik'); event.stopPropagation();">Anu finally shares</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=MJUggSg5fik');">Anu finally shares</a></div>
 <div class='desc-wrapper'><div class='desc'>cake with Chetan....Chetan in super goshti mode</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=w3lCynSCi4E')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=w3lCynSCi4E'); event.stopPropagation();">Anu & Chettan wearing</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=w3lCynSCi4E');">Anu & Chettan wearing</a></div>
 <div class='desc-wrapper'><div class='desc'>hats from Chetan's 6th birthday celebrations at Rainforest Cafe.....Anu says she heard a leopard roar loudly at the cafe....shows how it roared....talks about thunder and lightning at the cafe</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=eMd_wQxb2gM')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=eMd_wQxb2gM'); event.stopPropagation();">Anu says duck</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=eMd_wQxb2gM');">Anu says duck</a></div>
 <div class='desc-wrapper'><div class='desc'>makes a tuwack sound.....Chetan bothering, Anu whining......Chetan shows gift from Kyle.....Chetan reading Pooh Bear book to Anu on the sofa....Anu tries reading along a bit</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=Ahoq8NtQmGQ')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ahoq8NtQmGQ'); event.stopPropagation();">Chetan continues</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Ahoq8NtQmGQ');">Chetan continues</a></div>
 <div class='desc-wrapper'><div class='desc'>reading Pooh Bear book at Anu.....Anu whining that he is not reading properly......reads (?) along a bit with Chetan....Chetan wraps up in signature goshti style</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=XCcUNJYNjRg')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=XCcUNJYNjRg'); event.stopPropagation();">Kids back from Halloween</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=XCcUNJYNjRg');">Kids back from Halloween</a></div>
 <div class='desc-wrapper'><div class='desc'>trick or treating.....Anu in Polly Polar Bear costume chomping away on candy,,,,,Chetan in Pokemon outfit.....Mum tells Anu to stop eating candy....some kid knocks on door and Chetan gives candy.</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=KAtQpMhj9HQ')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KAtQpMhj9HQ'); event.stopPropagation();">Dad starts reading</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=KAtQpMhj9HQ');">Dad starts reading</a></div>
 <div class='desc-wrapper'><div class='desc'>to Anu on sofa, Anu takes over, Chetan joins to listen to Anu</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=_E4-YegCQYQ')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Oct-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_E4-YegCQYQ'); event.stopPropagation();">Anu hugs Chetan</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_E4-YegCQYQ');">Anu hugs Chetan</a></div>
 <div class='desc-wrapper'><div class='desc'>....Chettan gives Anu an umma....Chettan tells Anu he can see her in the camera....Anu whines she want to see too.....Chetan goes full goshti mode....Mum asks him to stop, Dad says i't Ok he is being recorded, let everyone see....Chetan responds by going super goshti</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
 </div></div>
 <div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(15, 23, 42, 0.9); align-items:center; justify-content:center; backdrop-filter: blur(4px);">
     <div style="position:relative; width:95%; max-width:1000px; aspect-ratio:16/9;">
         <span onclick="closeVideo()" style="position:absolute; top:-45px; right:0; color:white; font-size:35px; cursor:pointer;">&times;</span>
-        <iframe id="videoPlayer" src="" style="width:100%; height:100%; border-radius:12px; border:none; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <iframe id="videoPlayer" src="" style="width:100%; height:100%; border-radius:12px; border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 </div>
 <script>

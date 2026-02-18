@@ -16,44 +16,35 @@
     .container { max-width: 900px; margin: 0 auto; }
     
     header { margin-bottom: 1.5rem; padding-bottom: 1rem; }
-    h1 { 
-        font-size: 2.25rem; 
-        color: #0f172a; 
-        margin: 0; 
-        font-weight: 800; 
-        letter-spacing: -0.025em;
-    }
+    h1 { font-size: 2.25rem; color: #0f172a; margin: 0; font-weight: 800; letter-spacing: -0.025em; }
     
     .welcome-banner { 
-        margin: 0 0 2rem 0; 
-        padding: 1.25rem 1.5rem; 
-        background: var(--card); 
-        border-left: 4px solid var(--primary); 
-        border-radius: 8px; 
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        margin: 0 0 2rem 0; padding: 1.25rem 1.5rem; background: var(--card); 
+        border-left: 4px solid var(--primary); border-radius: 8px; 
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
-    .welcome-text { 
-        font-size: 1.1rem; 
-        color: #475569; 
-        margin: 0; 
-        font-weight: 500; 
-        line-height: 1.6;
-    }
+    .welcome-text { font-size: 1.1rem; color: #475569; margin: 0; font-weight: 500; }
 
     .card-grid { display: grid; gap: 1.25rem; }
     
     .card { 
         background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-        padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative; transition: all 0.2s; 
-        display: flex; align-items: flex-start; gap: 15px; cursor: pointer;
+        padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: default; /* Arrow cursor for the card body */
     }
-    .card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); background-color: #fff; }
+    
     .icon-main { color: #64748b; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
-    .date-stamp { font-size: 0.75rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em; }
-    .link-container { display: block; margin-bottom: 6px; padding-right: 35px; font-weight: 700; font-size: 1.2rem; color: #1e293b; }
+    .date-stamp { font-size: 0.75rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+    .link-container { display: block; margin-bottom: 6px; padding-right: 35px; font-weight: 700; font-size: 1.2rem; }
     
-    .link-text { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; 
+        text-underline-offset: 4px; 
+        cursor: pointer; /* Hand icon ONLY here */
+    }
     .link-text:hover { color: var(--primary-dark); text-decoration: none; }
     
     .desc-wrapper { position: relative; }
@@ -66,107 +57,107 @@
 <div class='container'><header><h1>Anu reading</h1></header>
 
 <div class='card-grid'>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=8Z8CdN0lTZE')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=8Z8CdN0lTZE'); event.stopPropagation();">Arvind throws</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=8Z8CdN0lTZE');">Arvind throws</a></div>
 <div class='desc-wrapper'><div class='desc'>snowball at Mum....Anu sitting inside toy car loking amused, gets out and starts plodding around.....inside house, Anu rummaging in cupboard, approaches Dad, looks up at camera and says  mimim.aa.aa.aa... goes back tp cuboard makinf other sounds....comes back, grabs Dad's leg gleefully and says Eh..Taa..Eh...Dad replies and Anu stares silently....Dad asks where Chetan is and Anu replies</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=iF2AkwklPr8')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=iF2AkwklPr8'); event.stopPropagation();">Anu crawling</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=iF2AkwklPr8');">Anu crawling</a></div>
 <div class='desc-wrapper'><div class='desc'>up steps from basement chattering and whiniing away....reaches top finally and runs into kitchen, points to pickle bottle and says Bbbba..Mmma....Mum says that's hot and Anu shakes her hands and says hooo....Anu opens drawer .... Mum says Athinde Ullil Onnilla and Anu promptly throws out mats from drawer</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=cCIM76ALHSs')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cCIM76ALHSs'); event.stopPropagation();">Microwave beeps</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cCIM76ALHSs');">Microwave beeps</a></div>
 <div class='desc-wrapper'><div class='desc'>and Anu says mamma....Mum asks Ende Mamma Vende and Anu replies....Mum sets food on island, Anu says Tetta...Mum looking sternly at camera....Closeup of Arvind pic on fridge and his lunchbox.....Mum asks Anu if she wants banana and she nods head in negative....Anu walking around drinking from juice bottle.....Mum sits Anu in high chair and she starts whining</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=yqrlzNoD9bo')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=yqrlzNoD9bo'); event.stopPropagation();">Anu in high</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=yqrlzNoD9bo');">Anu in high</a></div>
 <div class='desc-wrapper'><div class='desc'>chair whining away....opens baby pic book and starts reading very eloquently....pan to Mum doing work.....Anu asking Dad some questions....Dad asks where's the baby and Anu points to pic in book, then points again correctly and says Daaay when asked where the baby with the blocks are</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=uZrfmLwyxfs')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=uZrfmLwyxfs'); event.stopPropagation();">Dad asks where</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=uZrfmLwyxfs');">Dad asks where</a></div>
 <div class='desc-wrapper'><div class='desc'>the other baby with blocks are and Anu keeps asking Eh Eh.....next where's the baby with the oranges and Anu points it out correctly....where's the other baby with the oranges is met with Eh Eh and pointing to a random pic in book.....Dad holding hands with kids and dancing to nursery song.....Anu is mighty excited</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=6hSA70hB0HU')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=6hSA70hB0HU'); event.stopPropagation();">Anu dancing solo</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=6hSA70hB0HU');">Anu dancing solo</a></div>
 <div class='desc-wrapper'><div class='desc'>to nursery song.....pulls paper roll out of cupboard and runs around kitchen island grinning.....Arvind says about a Pokemon character that "she is a bad guy" and Dad is confused.....Anu putzing around.....Arvind has more to say about Pokeman charcter he is coloring....Anu assembling kitchen equipment</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=vImPWHAzBYM')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=vImPWHAzBYM'); event.stopPropagation();">Anu grabs Dad's</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=vImPWHAzBYM');">Anu grabs Dad's</a></div>
 <div class='desc-wrapper'><div class='desc'>legs, pulls him by his finger and starts dancing to nursery song....grabs finger on other hand too and dances vigorously....song over, grabs Dad's legs looks up and Dad asks Edukkano and gets excited....Dad picks her up, she rests head on shoulder and listens to new song....Arvind continues to color</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=zGOOtG6vkyk')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zGOOtG6vkyk'); event.stopPropagation();">Arvind running</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=zGOOtG6vkyk');">Arvind running</a></div>
 <div class='desc-wrapper'><div class='desc'>around living room with vacuum cleaner part making vacuum cleaner sounds....Anu copying Arvind</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=scQiVzVylG4')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=scQiVzVylG4'); event.stopPropagation();">Anu saying</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=scQiVzVylG4');">Anu saying</a></div>
 <div class='desc-wrapper'><div class='desc'>words - cat, dog, cow, this, boys, toys, baby, up, apple/orange juice, anu, chetan, achan, amma....replies to where is anu/ammumma? .... says other words - car, deck, moon.</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=udU26VF3eTg')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=udU26VF3eTg'); event.stopPropagation();">Mum asks Anu</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=udU26VF3eTg');">Mum asks Anu</a></div>
 <div class='desc-wrapper'><div class='desc'>to show her eye.....Anu giving Kurumbi look...Mum asks her to say diaper....Achan asks Enginiya Chirikkya, engineya Karaya, enginaye scream cheyya, Chetan engineya karaya, scream cheya.......Anu, close your eyes (closes eyes and opens mouth)....showing how Achan yawns</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=gayzZro-ER8')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gayzZro-ER8'); event.stopPropagation();">Anu brings picture</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gayzZro-ER8');">Anu brings picture</a></div>
 <div class='desc-wrapper'><div class='desc'>book from cupboard, sits on Dad's lap and Dad asks questions about the pics</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=K6BN-OoHEBM')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=K6BN-OoHEBM'); event.stopPropagation();">More questions</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=K6BN-OoHEBM');">More questions</a></div>
 <div class='desc-wrapper'><div class='desc'>about pics....when all done, Dad says no more and Anu starts whining</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=ZLntIo3MNAo')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZLntIo3MNAo'); event.stopPropagation();">Anu in toy car</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ZLntIo3MNAo');">Anu in toy car</a></div>
 <div class='desc-wrapper'><div class='desc'>on deck in pink dress and hair pinned up...grinning widely and babbling away....asks Mum where Dad, Mum, Arvind and Anu are</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=9k-t4Y3onzc')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9k-t4Y3onzc'); event.stopPropagation();">Anu putzing</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=9k-t4Y3onzc');">Anu putzing</a></div>
 <div class='desc-wrapper'><div class='desc'>around more on deck</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=RjZ2kKImTmk')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=RjZ2kKImTmk'); event.stopPropagation();">Anu watering</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=RjZ2kKImTmk');">Anu watering</a></div>
 <div class='desc-wrapper'><div class='desc'>plants and playing in the front yard</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=2QiaJpFWePA')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>EARLY-2000</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=2QiaJpFWePA'); event.stopPropagation();">Relax on sofa</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=2QiaJpFWePA');">Relax on sofa</a></div>
 <div class='desc-wrapper'><div class='desc'>More watering in front yard...at the end Anu lying on sofa and dad reading paper</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
 </div></div>
 <div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(15, 23, 42, 0.9); align-items:center; justify-content:center; backdrop-filter: blur(4px);">
     <div style="position:relative; width:95%; max-width:1000px; aspect-ratio:16/9;">
         <span onclick="closeVideo()" style="position:absolute; top:-45px; right:0; color:white; font-size:35px; cursor:pointer;">&times;</span>
-        <iframe id="videoPlayer" src="" style="width:100%; height:100%; border-radius:12px; border:none; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <iframe id="videoPlayer" src="" style="width:100%; height:100%; border-radius:12px; border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 </div>
 <script>

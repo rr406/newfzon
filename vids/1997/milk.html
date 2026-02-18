@@ -16,44 +16,35 @@
     .container { max-width: 900px; margin: 0 auto; }
     
     header { margin-bottom: 1.5rem; padding-bottom: 1rem; }
-    h1 { 
-        font-size: 2.25rem; 
-        color: #0f172a; 
-        margin: 0; 
-        font-weight: 800; 
-        letter-spacing: -0.025em;
-    }
+    h1 { font-size: 2.25rem; color: #0f172a; margin: 0; font-weight: 800; letter-spacing: -0.025em; }
     
     .welcome-banner { 
-        margin: 0 0 2rem 0; 
-        padding: 1.25rem 1.5rem; 
-        background: var(--card); 
-        border-left: 4px solid var(--primary); 
-        border-radius: 8px; 
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        margin: 0 0 2rem 0; padding: 1.25rem 1.5rem; background: var(--card); 
+        border-left: 4px solid var(--primary); border-radius: 8px; 
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
-    .welcome-text { 
-        font-size: 1.1rem; 
-        color: #475569; 
-        margin: 0; 
-        font-weight: 500; 
-        line-height: 1.6;
-    }
+    .welcome-text { font-size: 1.1rem; color: #475569; margin: 0; font-weight: 500; }
 
     .card-grid { display: grid; gap: 1.25rem; }
     
     .card { 
         background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
-        padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative; transition: all 0.2s; 
-        display: flex; align-items: flex-start; gap: 15px; cursor: pointer;
+        padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: default; /* Arrow cursor for the card body */
     }
-    .card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); background-color: #fff; }
+    
     .icon-main { color: #64748b; font-size: 24px; margin-top: 15px; }
     .content-right { flex: 1; min-width: 0; }
-    .date-stamp { font-size: 0.75rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em; }
-    .link-container { display: block; margin-bottom: 6px; padding-right: 35px; font-weight: 700; font-size: 1.2rem; color: #1e293b; }
+    .date-stamp { font-size: 0.75rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+    .link-container { display: block; margin-bottom: 6px; padding-right: 35px; font-weight: 700; font-size: 1.2rem; }
     
-    .link-text { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; 
+        text-underline-offset: 4px; 
+        cursor: pointer; /* Hand icon ONLY here */
+    }
     .link-text:hover { color: var(--primary-dark); text-decoration: none; }
     
     .desc-wrapper { position: relative; }
@@ -62,51 +53,51 @@
     .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 6px; }
     .desc:not(.expanded).is-truncated + .read-more { display: inline-block; }
 </style>
-<title>Milk Episode</title></head><body>
-<div class='container'><header><h1>Milk Episode</h1></header>
+<title>Milkman Series</title></head><body>
+<div class='container'><header><h1>Milkman Series</h1></header>
 
 <div class='card-grid'>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=n3fu_lJoB3Y')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=n3fu_lJoB3Y'); event.stopPropagation();">Quiet contemplation</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=n3fu_lJoB3Y');">Quiet contemplation</a></div>
 <div class='desc-wrapper'><div class='desc'>while enjoying milk</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=ItnLvZDR8nU')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ItnLvZDR8nU'); event.stopPropagation();">Knocks milk</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=ItnLvZDR8nU');">Knocks milk</a></div>
 <div class='desc-wrapper'><div class='desc'>down on to carpet; Super whining for more milk;</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=jnFkdImOCpo')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jnFkdImOCpo'); event.stopPropagation();">Whine to mom</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=jnFkdImOCpo');">Whine to mom</a></div>
 <div class='desc-wrapper'><div class='desc'>...Knocks down another cup; Whine on and on</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=cO41Ya8RfIU')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cO41Ya8RfIU'); event.stopPropagation();">Half an hour orangatte</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=cO41Ya8RfIU');">Half an hour orangatte</a></div>
 <div class='desc-wrapper'><div class='desc'>Kutta, says Mum....Mr. says Naan Ongatte, clambers up on to bed and cuddles up with Mum.....says Achan ammakye camcorder epulum vakkyum....Mum says Ammakye deshyam varum alle...Mr chuckles....starts making funny sounds keeping Mum awake</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=_6UNXodZvd8')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_6UNXodZvd8'); event.stopPropagation();">Inni kannadachatte</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=_6UNXodZvd8');">Inni kannadachatte</a></div>
 <div class='desc-wrapper'><div class='desc'>kedaku, pleads Mum, allengi Vello Palo poyi kudikkyu....Mr keeps making funny sounds....Paal evidaya kalanje</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
-<div class='card' onclick="playVideo('https://www.youtube.com/watch?v=wvPptcp1aQA')"><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
 <div class='date-stamp'>Apr-1997</div>
-<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wvPptcp1aQA'); event.stopPropagation();">I'm VERY ANGRY</a></div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=wvPptcp1aQA');">I'm VERY ANGRY</a></div>
 <div class='desc-wrapper'><div class='desc'>Avide careptil far away paal kalanju, says Mr....Mum asks if he spilled the whole glass....Mr all konji....Mum to Dad Inni Madi adu off cheyu, tells Mr. Off cheyan parayu....Mr says OFF with stern face, I get very angry, makes ANGRY face and says I'm very ANGRY, I'm TURN IT...OFF....Mum says I'm trying to sleep for 5 minutes...Eee kuttiye angade kondupovu</div>
-<span class='read-more' onclick='toggleDesc(this); event.stopPropagation();'>Read more</span></div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
 </div></div>
 </div></div>
 <div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(15, 23, 42, 0.9); align-items:center; justify-content:center; backdrop-filter: blur(4px);">
     <div style="position:relative; width:95%; max-width:1000px; aspect-ratio:16/9;">
         <span onclick="closeVideo()" style="position:absolute; top:-45px; right:0; color:white; font-size:35px; cursor:pointer;">&times;</span>
-        <iframe id="videoPlayer" src="" style="width:100%; height:100%; border-radius:12px; border:none; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <iframe id="videoPlayer" src="" style="width:100%; height:100%; border-radius:12px; border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 </div>
 <script>
