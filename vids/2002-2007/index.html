@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang='en'><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    :root { 
+        --primary: #2563eb; 
+        --primary-hover: #1d4ed8;
+        --text: #1f2937; 
+        --text-muted: #64748b;
+        --bg: #f8fafc; 
+        --card: #ffffff; 
+        --border: #e2e8f0; 
+    }
+    body { font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+           line-height: 1.5; color: var(--text); background: var(--bg); margin: 0; padding: 20px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    
+    header { margin-bottom: 1.5rem; padding-bottom: 1rem; }
+    h1 { font-size: 2.25rem; color: #0f172a; margin: 0; font-weight: 800; letter-spacing: -0.025em; }
+    
+    .welcome-banner { 
+        margin: 0 0 2rem 0; padding: 1.25rem 1.5rem; background: var(--card); 
+        border-left: 4px solid var(--primary); border-radius: 8px; 
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .welcome-text { font-size: 1.1rem; color: #475569; margin: 0; font-weight: 500; }
+
+    .card-grid { display: grid; gap: 1.25rem; }
+    
+    .card { 
+        background: var(--card); border: 1px solid var(--border); border-radius: 12px; 
+        padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+        display: flex; align-items: flex-start; gap: 15px; 
+        cursor: default;
+    }
+    
+    .icon-main { color: var(--text-muted); font-size: 24px; margin-top: 15px; }
+    .content-right { flex: 1; min-width: 0; }
+    .date-stamp { font-size: 0.75rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+    .link-container { display: block; margin-bottom: 6px; padding-right: 35px; font-weight: 700; font-size: 1.2rem; }
+    
+    .link-text { 
+        color: var(--primary); 
+        text-decoration: underline; 
+        text-underline-offset: 4px; 
+        text-decoration-thickness: 2px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: inline-block;
+    }
+    .link-text:hover { 
+        color: var(--primary-hover); 
+        text-decoration: underline;
+        text-shadow: 0 0 1px rgba(37, 99, 235, 0.2);
+        transform: scale(1.01);
+    }
+    
+    .desc-wrapper { position: relative; }
+    .desc { color: var(--text-muted); font-size: 0.95rem; padding-right: 35px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    .desc.expanded { -webkit-line-clamp: unset; display: block; }
+    .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: none; margin-top: 6px; }
+    .read-more:hover { text-decoration: underline; }
+    .desc:not(.expanded).is-truncated + .read-more { display: inline-block; }
+</style>
+<title>2002-2007</title></head><body>
+<div class='container'><header><h1>2002-2007</h1></header>
+<div class='welcome-banner'><p class='welcome-text'>Nagarjuna Enclave Adventures</p></div>
+<div class='card-grid'>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Tr1qYM-w4jE');">Big silly baby</a></div>
+<div class='desc-wrapper'><div class='desc'>...Arvind and Anu running around in room in A204....Anu saying I am a big silly baby and other nonsense...and acting like a silly baby...Arvind with teddy bear and ANu with Powerpuff girl....both doing more Goshti....Arvind showing his Harry Potter books. and Anu shows Poerpuff girl book</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'>Talk about <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=P_ipDq5L488');">self</a></div>
+<div class='desc-wrapper'><div class='desc'>Anu talks at length about herself...Arvind complains about Anu monpolizing the show....finally gets his turn, starts on his monologue that turns into a Goshti show</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'>Sing <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=sgE8UHdn2v0');">dad songs</a></div>
+<div class='desc-wrapper'><div class='desc'>Goshti show from both continue....Dad asks Anu to sing a song...shy at first but then belts out Govinda kutta, Shaji Matha, Taash Tumhara, Spin me round and round.....Arvind sings Rocky Racoon....Anu laughing at Bro's goshti....Anu talking about DPS and says her friends are Amulya and Shruti Suresh.....Mum says Amulya...Anu says she already said that</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'>DPS Nursery <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=GpvYNAtjeW4');">Songs</a></div>
+<div class='desc-wrapper'><div class='desc'>Anu says names of other DPS friends....shares likes/dislikes about DPS....says names of DPS teachers and of teachers from previous school (Twinkler).....says teacher taught nursery songs.....sings Dhobi Laya, Machli and Thumbkin</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=7MjRf52WVIg');">Blossom's Hair</a></div>
+<div class='desc-wrapper'><div class='desc'>Anu says she's a Rolu Polu and Pappudu Shamu....Dad asks questions about Anu's age and upcoming birthday....answers, prompted by Mum....Dad asks age again...Anu says 10 and then corrects to 4.....says wants to have a Blossom cake....like Blosson because she's pink and has long hair like Mum....Dad suggests cutting Anu's hair and changing her name....Anu walks off in a huff.....Arvind lying quietly on floor in a sad mood....Dad asks him to talk about the contest he's going to be in</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'><a class='link-text' href='chandini.html'>Chandini</a></div>
+<div class='desc-wrapper'><div class='desc'>Anu mad at Dad for calling her Chandini</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'>Anu solves <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=LyxvEHsHlgQ');">calculus</a> problem</div>
+<div class='desc-wrapper'><div class='desc'>Arvind talks about what Harry Potter is doing these days.....Anu answers integral calculus question easily....but has trouble with "I have 10 apples, ate 1 how many left" type arithmetic questions....says she prefers calculus questions....Dad asks another caclulus question and Anu answers instantly....Dad says how about some arithmetic problems...Anu says no that's too easy, wants hard calculus problems</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='date-stamp'>Sep-2002</div>
+<div class='link-container'>Anu's <a class='link-text' href='anu_4thbday.html'>4th</a> Birthday</div>
+<div class='desc-wrapper'><div class='desc'>Cake cutting and eating</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>Oct-2002</div>
+<div class='link-container'>Arvind's <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=OlA5u8OVVTI');">8th</a> Birthday</div>
+<div class='desc-wrapper'><div class='desc'>at A204 Nagarjuna....Anu explains what the occasion is and who the cake is for....all singing HBD....Arvind blows candles and Anu complains smoke came in my eyes....all enjoying cake</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=i3ruht5XKgs');">Washington teesh</a></div>
+<div class='desc-wrapper'><div class='desc'>Anu chatting with camera...holds up Beware of Girls book....sings Wahington teesh ting tang teesh...argues with Dad about her age.....sings banana came out song.....tells a story</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'>Anu's <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=JvD4aMVOLNE');">best</a> friends</div>
+<div class='desc-wrapper'><div class='desc'>Anu talking about school and 1st, 2nd, 3rd etc best friends.....and who's not good and Tu and Katti Babbi with</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'>Nagarjuna <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=XU3FD56gvVY');">contest</a></div>
+<div class='desc-wrapper'><div class='desc'>Anu talks about the Nagarjuna contest and her role in it.....Arvind & Anu goshti show on bed....Arvind shows the Famous FIve book he's reading</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=Yr3wyWTXfZs');">Sugar cubes</a></div>
+<div class='desc-wrapper'><div class='desc'>Anu says she's going with Dad to Chennai to get sugar cubes.....Arvind clarifies....Arvind wearing dupatta and nightie...both doing goshti with Vasu's sari....Mum takes away sari.....more goshti on bed</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'>Mum's <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gFwD71iU8yY');">annoyed</a></div>
+<div class='desc-wrapper'><div class='desc'>Goshti continues full steam....Mum comes in and says time to eat, look at this mess, tells Arvind you look like a fool in that dress...Mum rummaging in cupboard, Anu waking up...Arvind fast asleep on floor</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=BgVpbwea82E');">Directions</a> to Nursery Class</div>
+<div class='desc-wrapper'><div class='desc'>Arvind starts explaining directions to nuresery class....Anu interrurpts quickly and takes over....says there's a girl in her class with long hair and kurus</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=gGCyW4KZim0');">Rakhee & Pokemon</a></div>
+<div class='desc-wrapper'><div class='desc'>Mum says Rakhee is coming and Arvind will tie band for Anu.....both look at each other and smile.....Anu says Pokemon names and attack....Dad asks Arvnd about Mandaprabhu....Mum says don't call him that</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=4Uda88nAEXE');">Funny dance</a></div>
+<div class='desc-wrapper'><div class='desc'>Various - Arvind, Anu having breakfast...Anu funny dance....Arvind putting hair band for Anu</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>folder_open</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'><a class='link-text' href='dad_anu_sad.html'>Sad</a> Anu</div>
+<div class='desc-wrapper'><div class='desc'>Dad makes Anu sad</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'>Arvind's <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=-gmyV6gT--s');">big</a> story</div>
+<div class='desc-wrapper'><div class='desc'>Arvind narrating his magnum opus</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2002</div>
+<div class='link-container'>Anu <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=0PFXJGpxR9M');">snoring</a></div>
+<div class='desc-wrapper'><div class='desc'>Anu lying on edge of bed, Arvind on floor. next to her...both fast asleep...Anu snoring....Arvind clasping Anu's hand</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>Sep-2003</div>
+<div class='link-container'>2003 <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=FzcPVzR7ZPw');">Onam</a></div>
+<div class='desc-wrapper'><div class='desc'>at A204 - Arvind, Anu, Mum in Onam attire....Pookalam....Mum's sadya on table....Kids try to eat with hands</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>Feb-2006</div>
+<div class='link-container'>Anu <a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=oXz-bW5-tsU');">Acting</a></div>
+<div class='desc-wrapper'><div class='desc'>Arvind & Anu at dining table drinking Tang....Anu puts on ating show....Arvind learns to operate camcorder....Anu shows prize she won at friend's party and other stuff</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2006</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=p14103yJ-fM');">Stylish</a> Lady</div>
+<div class='desc-wrapper'><div class='desc'>Anu teaches Arvind how to do Yoga.....Acts like a stylish lady</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+<div class='card'><i class='material-icons icon-main'>play_circle_outline</i><div class='content-right'>
+<div class='date-stamp'>XXX-2006</div>
+<div class='link-container'><a class='link-text' onclick="playVideo('https://www.youtube.com/watch?v=5IuMXZ9J-xU');">Cricket</a></div>
+<div class='desc-wrapper'><div class='desc'>Anu showing how to play cricket....Arvind does some goshti...Arvind & Anu playing pretend cricket</div>
+<span class='read-more' onclick='toggleDesc(this);'>Read more</span></div>
+</div></div>
+</div></div>
+<div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(15, 23, 42, 0.9); align-items:center; justify-content:center; backdrop-filter: blur(4px);">
+    <div style="position:relative; width:95%; max-width:1000px; aspect-ratio:16/9;">
+        <span onclick="closeVideo()" style="position:absolute; top:-45px; right:0; color:white; font-size:35px; cursor:pointer;">&times;</span>
+        <iframe id="videoPlayer" src="" style="width:100%; height:100%; border-radius:12px; border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+</div>
+<script>
+    function playVideo(url) {
+        if (url === '#' || !url) return;
+        let videoId = '';
+        if (url.includes('v=')) { videoId = url.split('v=')[1].split('&')[0]; }
+        else if (url.includes('youtu.be/')) { videoId = url.split('youtu.be/')[1].split('?')[0]; }
+        if (videoId) {
+            document.getElementById('videoPlayer').src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+            document.getElementById('videoModal').style.display = "flex";
+            document.body.style.overflow = 'hidden';
+        } else { window.location.href = url; }
+    }
+    function closeVideo() {
+        document.getElementById('videoModal').style.display = "none";
+        document.getElementById('videoPlayer').src = "";
+        document.body.style.overflow = 'auto';
+    }
+    function toggleDesc(el) {
+        const desc = el.previousElementSibling;
+        desc.classList.toggle('expanded');
+        el.innerText = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.desc').forEach(d => {
+            if (d.scrollHeight > d.clientHeight) { d.classList.add('is-truncated'); }
+        });
+    });
+</script>
+</body></html>
